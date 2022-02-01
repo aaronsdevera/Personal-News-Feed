@@ -13,6 +13,11 @@ Personal news feed aggregator:
 - [New York Times](https://nytimes.com)
 - [Wall Street Journal](https://wsj.com)
 
+**Features**
+- No dang ads, cookie modals, etc etc
+- Clear highlighting of articles with input keyword
+- Dumb easy to update
+
 **Built with**
 - [Eleventy](https://www.11ty.dev/)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
