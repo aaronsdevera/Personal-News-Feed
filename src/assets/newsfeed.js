@@ -30,25 +30,7 @@ fetch(makeURL('topstories'), {
     })
 });
 
-/*
-const AT_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ffeeds.feedburner.com%2Farstechnica%2Findex"
-
-var itemElement_AT = document.getElementById("feed-at");
-
-fetch(AT_URL, {
-    method: 'get',
-    headers: {
-        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4695.0 Safari/537.36'
-    },
-}).then(response => response.json())
-.then(data => data.items)
-.then(items => {
-    items.slice(0, 40).forEach(item => {
-        itemElement_AT.innerHTML += `<li class="feed-at-item"><a class="feed-at-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-at-item-pubdate">${item.pubDate}</span></li>`
-    })
-});
-*/
-const AT_URL = 'https://feeds.feedburner.com/arstechnica/index';
+const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.feedburner.com/arstechnica/index';
 let at_parser = new RSSParser();
 var itemElement_AT = document.getElementById("feed-at");
 (async () => {
@@ -62,7 +44,7 @@ var itemElement_AT = document.getElementById("feed-at");
 
 
 
-const VERGE_URL = "https://www.theverge.com/rss/index.xml"
+const VERGE_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.theverge.com/rss/index.xml"
 let verge_parser = new RSSParser();
 var itemElement_VERGE = document.getElementById("feed-verge");
 (async () => {
