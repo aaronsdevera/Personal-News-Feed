@@ -38,9 +38,7 @@ const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.feedb
 let at_parser = new RSSParser();
 var itemElement_AT = document.getElementById("feed-at");
 (async () => {
-
   let at_feed = await at_parser.parseURL(AT_URL);
-
   at_feed.items.forEach(item => {
     itemElement_AT.innerHTML += `<li class="feed-at-item"><a class="feed-at-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-at-item-pubdate">${item.pubDate}</span></li>`
   });
@@ -52,9 +50,7 @@ const VERGE_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.thev
 let verge_parser = new RSSParser();
 var itemElement_VERGE = document.getElementById("feed-verge");
 (async () => {
-
-  let verge_feed = await verge_parser.parseURL(AT_URL);
-
+  let verge_feed = await verge_parser.parseURL(VERGE_URL);
   verge_feed.items.forEach(item => {
     itemElement_VERGE.innerHTML += `<li class="feed-verge-item"><a class="feed-verge-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-verge-item-pubdate">${item.pubDate}</span></li>`
   });
