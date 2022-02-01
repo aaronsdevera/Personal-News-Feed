@@ -1,7 +1,9 @@
 # Personal-News-Feed
-Personal news feed aggregator:
+Personal news feed aggregator.
 
 **[newsfeed.aaronsdevera.com](https://newsfeed.aaronsdevera.com)**
+
+Inspired by [hackurls](https://hackurls.com/).
 
 ![Screenshot of my personal news feed website](https://newsfeed.aaronsdevera.com/assets/newsfeed-screenshot.png)
 
