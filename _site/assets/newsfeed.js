@@ -92,7 +92,7 @@ var itemElement_NYT = document.getElementById("feed-nyt");
 
 
 
-const WSJ_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ffeeds.a.dj.com%2Frss%2FRSSMarketsMain.xml"
+const WSJ_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
 let wsj_parser = new RSSParser();
 var itemElement_WSJ = document.getElementById("feed-wsj");
 (async () => {
