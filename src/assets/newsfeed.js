@@ -97,7 +97,7 @@ let wsj_parser = new RSSParser();
 var itemElement_WSJ = document.getElementById("feed-wsj");
 (async () => {
 
-    let wsj_feed = await wsj_parser.parseURL(NYT_URL);
+    let wsj_feed = await wsj_parser.parseURL(WSJ_URL);
   
     wsj_feed.items.forEach(item => {
         itemElement_WSJ.innerHTML += `<li class="feed-wsj-item"><a class="feed-wsj-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-wsj-item-pubdate">${item.pubDate}</span></li>`
