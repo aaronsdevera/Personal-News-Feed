@@ -48,12 +48,22 @@ h2:hover {
 }
 
 .site-tag input {
-    background: #ffffff;
+    background: #000000;
+    color: #ffffff;
     border:none;
 }
 
 .site-tag input::placeholder {
-    color: #727272;
+    color: #afafaf;
+}
+
+.site-tag input:focus{
+    outline: none;
+}
+
+.tag-highlight {
+    background: #0000ff;
+    color:#ffffff;
 }
 
 .nav {

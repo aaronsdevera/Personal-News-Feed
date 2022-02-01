@@ -27,20 +27,40 @@ fetch(makeURL('topstories'), {
     fetch(makeURL(element))
         .then(result => result.json())
         .then(item => {
-            const item_url = new URL(item.url)
-            const hostname = item_url.hostname.replace('www.','')
+            var item_url = ''
+            var hostname = ''
+            try{
+                item_url = new URL(item.url)
+            } catch {}
+            try {
+                hostname = item_url.hostname.replace('www.','')
+            } catch {}
+            
             itemElement_HN.innerHTML += `<li class="feed-hn-item"><a class="feed-hn-item-url" href="${item.url}">${item.title}</a><span class="feed-tag feed-hn-item-hostname">${hostname}</span></li>`
         })
     })
 });
 
+const BBG_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://nitter.net/business/rss';
+let bbg_parser = new RSSParser({
+    headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4695.0 Safari/537.36'},
+  });
+var itemElement_BBG = document.getElementById("feed-bbg");
+(async () => {
+  let bbg_feed = await bbg_parser.parseURL(BBG_URL);
+  bbg_feed.items.forEach(item => {
+    const title = `${item.title}`
+    const text = title.split('https://trib.al')[0]
+    const text_link = `https://trib.al`+title.split('https://trib.al')[1]
+    itemElement_BBG.innerHTML += `<li class="feed-bbg-item"><a class="feed-bbg-item-url" href="${text_link}">${text}</a><span class="feed-tag feed-bbg-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
 const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.feedburner.com/arstechnica/index';
 let at_parser = new RSSParser();
 var itemElement_AT = document.getElementById("feed-at");
 (async () => {
-
   let at_feed = await at_parser.parseURL(AT_URL);
-
   at_feed.items.forEach(item => {
     itemElement_AT.innerHTML += `<li class="feed-at-item"><a class="feed-at-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-at-item-pubdate">${item.pubDate}</span></li>`
   });
@@ -52,9 +72,7 @@ const VERGE_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.thev
 let verge_parser = new RSSParser();
 var itemElement_VERGE = document.getElementById("feed-verge");
 (async () => {
-
-  let verge_feed = await verge_parser.parseURL(AT_URL);
-
+  let verge_feed = await verge_parser.parseURL(VERGE_URL);
   verge_feed.items.forEach(item => {
     itemElement_VERGE.innerHTML += `<li class="feed-verge-item"><a class="feed-verge-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-verge-item-pubdate">${item.pubDate}</span></li>`
   });
@@ -85,3 +103,26 @@ var itemElement_WSJ = document.getElementById("feed-wsj");
         itemElement_WSJ.innerHTML += `<li class="feed-wsj-item"><a class="feed-wsj-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-wsj-item-pubdate">${item.pubDate}</span></li>`
     });
   })();
+
+
+
+document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
+    const highlighted = document.querySelectorAll('.tag-highlight');
+    highlighted.forEach((list_item) => {
+        list_item.classList.remove('tag-highlight');
+    })
+   
+    const currentValue = document.getElementById('site-tag-input').value;
+    const elements = document.querySelectorAll('.feed li a')
+    elements.forEach((list_item) => {
+        if (String(list_item.innerHTML).toLowerCase().includes(currentValue.toLowerCase())) {
+            list_item.classList.add('tag-highlight')
+        }
+    })
+    if (document.getElementById('site-tag-input').value === ''){
+        const highlighted = document.querySelectorAll('.tag-highlight');
+    highlighted.forEach((list_item) => {
+        list_item.classList.remove('tag-highlight');
+    })
+    }
+});
