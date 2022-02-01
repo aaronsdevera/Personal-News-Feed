@@ -1,3 +1,7 @@
+var today = new Date();
+var time = today.toISOString();
+document.getElementById('insert-time').innerHTML = time;
+
 const HN_BASE_URL = 'https://hacker-news.firebaseio.com/v0'
 const HN_ENDPOINT_TOPSTORIES = '/topstories.json'
 const HN_ENDPOINT_ITEM = `/item/` // must append id.json e.g. 12345.json
