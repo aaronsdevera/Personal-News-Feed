@@ -66,6 +66,12 @@ h2:hover {
     color:#ffffff;
 }
 
+#highlight-results{
+    background:#000000;
+    color:#aaaaaa;
+    padding:0px 4px 0px 4px;
+}
+
 .nav {
     margin-top:25px;
     margin-bottom:25px;

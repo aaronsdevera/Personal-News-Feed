@@ -107,6 +107,7 @@ var itemElement_WSJ = document.getElementById("feed-wsj");
 
 
 document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
+    var count = 0;
     const highlighted = document.querySelectorAll('.tag-highlight');
     highlighted.forEach((list_item) => {
         list_item.classList.remove('tag-highlight');
@@ -117,6 +118,8 @@ document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
     elements.forEach((list_item) => {
         if (String(list_item.innerHTML).toLowerCase().includes(currentValue.toLowerCase())) {
             list_item.classList.add('tag-highlight')
+            count += 1
+            document.getElementById('highlight-results').innerHTML = `${count} results`
         }
     })
     if (document.getElementById('site-tag-input').value === ''){
