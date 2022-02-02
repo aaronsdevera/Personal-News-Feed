@@ -51,7 +51,11 @@ var itemElement_BBG = document.getElementById("feed-bbg");
   bbg_feed.items.forEach(item => {
     const title = `${item.title}`
     const text = title.split('https://trib.al')[0]
-    const text_link = `https://trib.al`+title.split('https://trib.al')[1]
+    var link_uri = title.split('https://trib.al')[1]
+    if (link_uri.includes(' ')){
+        link_uri = link_uri.split(' ')[0]
+    }
+    const text_link = `https://trib.al`+link_uri
     itemElement_BBG.innerHTML += `<li class="feed-bbg-item"><a class="feed-bbg-item-url" href="${text_link}">${text}</a><span class="feed-tag feed-bbg-item-pubdate">${item.pubDate}</span></li>`
   });
 })();
