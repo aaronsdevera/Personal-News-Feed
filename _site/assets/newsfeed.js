@@ -124,8 +124,9 @@ document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
     })
     if (document.getElementById('site-tag-input').value === ''){
         const highlighted = document.querySelectorAll('.tag-highlight');
-    highlighted.forEach((list_item) => {
-        list_item.classList.remove('tag-highlight');
-    })
+        highlighted.forEach((list_item) => {
+            list_item.classList.remove('tag-highlight');
+        })
+        document.getElementById('highlight-results').innerHTML = '';
     }
 });
