@@ -99,7 +99,7 @@ var itemElement_NEURAL = document.getElementById("feed-neural");
   });
 })();
 
-const HACKADAY_URL = "https://cors-proxy.aaronsdevera.workers.dev/?http://hackaday.it/customfeed/all.php"
+const HACKADAY_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://hackaday.com/blog/feed/"
 let hackaday_parser = new RSSParser();
 var itemElement_HACKADAY = document.getElementById("feed-hackaday");
 (async () => {
