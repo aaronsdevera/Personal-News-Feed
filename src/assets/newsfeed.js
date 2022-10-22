@@ -89,13 +89,13 @@ var itemElement_MIT = document.getElementById("feed-mit");
   });
 })();
 
-const NEURAL_URL = "http://neural.it/customfeed/all.php"
+const NEURAL_URL = "https://cors-proxy.aaronsdevera.workers.dev/?http://neural.it/customfeed/all.php"
 let neural_parser = new RSSParser();
 var itemElement_NEURAL = document.getElementById("feed-neural");
 (async () => {
   let neural_feed = await neural_parser.parseURL(NEURAL_URL);
   neural_feed.items.forEach(item => {
-    itemElement_MIT.innerHTML += `<li class="feed-neural-item"><a class="feed-neural-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-neural-item-pubdate">${item.pubDate}</span></li>`
+    itemElement_NEURAL.innerHTML += `<li class="feed-neural-item"><a class="feed-neural-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-neural-item-pubdate">${item.pubDate}</span></li>`
   });
 })();
 
