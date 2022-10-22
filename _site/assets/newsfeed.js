@@ -79,6 +79,16 @@ var itemElement_VERGE = document.getElementById("feed-verge");
   });
 })();
 
+const MIT_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.technologyreview.com/feed/"
+let mit_parser = new RSSParser();
+var itemElement_MIT = document.getElementById("feed-mit");
+(async () => {
+  let mit_feed = await mit_parser.parseURL(MIT_URL);
+  mit_feed.items.forEach(item => {
+    itemElement_MIT.innerHTML += `<li class="feed-mit-item"><a class="feed-mit-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-mit-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
 const NYT_URL = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
 let nyt_parser = new RSSParser();
 var itemElement_NYT = document.getElementById("feed-nyt");
