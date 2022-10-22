@@ -79,7 +79,7 @@ var itemElement_VERGE = document.getElementById("feed-verge");
   });
 })();
 
-const MIT_URL = "https://www.technologyreview.com/feed/"
+const MIT_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.technologyreview.com/feed/"
 let mit_parser = new RSSParser();
 var itemElement_MIT = document.getElementById("feed-mit");
 (async () => {
