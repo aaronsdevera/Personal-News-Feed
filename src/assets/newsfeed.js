@@ -99,6 +99,16 @@ var itemElement_NEURAL = document.getElementById("feed-neural");
   });
 })();
 
+const HACKADAY_URL = "https://cors-proxy.aaronsdevera.workers.dev/?http://hackaday.it/customfeed/all.php"
+let hackaday_parser = new RSSParser();
+var itemElement_HACKADAY = document.getElementById("feed-hackaday");
+(async () => {
+  let hackaday_feed = await hackaday_parser.parseURL(HACKADAY_URL);
+  hackaday_feed.items.forEach(item => {
+    itemElement_HACKADAY.innerHTML += `<li class="feed-hackaday-item"><a class="feed-hackaday-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-hackaday-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
 const NYT_URL = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
 let nyt_parser = new RSSParser();
 var itemElement_NYT = document.getElementById("feed-nyt");
