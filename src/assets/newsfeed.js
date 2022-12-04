@@ -57,7 +57,8 @@ var itemElement_BBG = document.getElementById("feed-bbg");
   });
 })();
 
-const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.feedburner.com/arstechnica/index';
+//const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.feedburner.com/arstechnica/index';
+const AT_URL = 'https://cors-proxy.aaronsdevera.workers.dev/?https://feeds.arstechnica.com/arstechnica/index';
 let at_parser = new RSSParser();
 var itemElement_AT = document.getElementById("feed-at");
 (async () => {
@@ -79,6 +80,28 @@ var itemElement_VERGE = document.getElementById("feed-verge");
   });
 })();
 
+const INTERCEPT_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://theintercept.com/feed/?lang=en"
+let intercept_parser = new RSSParser();
+var itemElement_INTERCEPT = document.getElementById("feed-intercept");
+(async () => {
+  let intercept_feed = await intercept_parser.parseURL(INTERCEPT_URL);
+  intercept_feed.items.forEach(item => {
+    itemElement_INTERCEPT.innerHTML += `<li class="feed-intercept-item"><a class="feed-intercept-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-intercept-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
+
+
+const NEURAL_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://neural.it/customfeed/all.php"
+let neural_parser = new RSSParser();
+var itemElement_NEURAL = document.getElementById("feed-neural");
+(async () => {
+  let neural_feed = await neural_parser.parseURL(NEURAL_URL);
+  neural_feed.items.forEach(item => {
+    itemElement_NEURAL.innerHTML += `<li class="feed-neural-item"><a class="feed-neural-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-neural-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
 const MIT_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.technologyreview.com/feed/"
 let mit_parser = new RSSParser();
 var itemElement_MIT = document.getElementById("feed-mit");
@@ -86,16 +109,6 @@ var itemElement_MIT = document.getElementById("feed-mit");
   let mit_feed = await mit_parser.parseURL(MIT_URL);
   mit_feed.items.forEach(item => {
     itemElement_MIT.innerHTML += `<li class="feed-mit-item"><a class="feed-mit-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-mit-item-pubdate">${item.pubDate}</span></li>`
-  });
-})();
-
-const NEURAL_URL = "https://cors-proxy.aaronsdevera.workers.dev/?http://neural.it/customfeed/all.php"
-let neural_parser = new RSSParser();
-var itemElement_NEURAL = document.getElementById("feed-neural");
-(async () => {
-  let neural_feed = await neural_parser.parseURL(NEURAL_URL);
-  neural_feed.items.forEach(item => {
-    itemElement_NEURAL.innerHTML += `<li class="feed-neural-item"><a class="feed-neural-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-neural-item-pubdate">${item.pubDate}</span></li>`
   });
 })();
 
@@ -135,7 +148,58 @@ var itemElement_WSJ = document.getElementById("feed-wsj");
     });
   })();
 
+const ROLLCALL_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://nitter.net/rollcall/rss"
+let rollcall_parser = new RSSParser();
+var itemElement_ROLLCALL = document.getElementById("feed-rollcall");
+(async () => {
+  let rollcall_feed = await rollcall_parser.parseURL(ROLLCALL_URL);
+  rollcall_feed.items.forEach(item => {
+    const title = `${item.title}`
+    const text = title.split('http://ow.ly')[0]
+    const link_uri = title.split('http://ow.ly')[1].split(' ')[0]
+    const text_link = `http://ow.ly`+link_uri
+    itemElement_ROLLCALL.innerHTML += `<li class="feed-rollcall-item"><a class="feed-rollcall-item-url" href="${text_link}">${text}</a><span class="feed-tag feed-rollcall-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
 
+const NATURE_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://nitter.net/Nature/rss"
+let nature_parser = new RSSParser();
+var itemElement_NATURE = document.getElementById("feed-nature");
+(async () => {
+  let nature_feed = await bbg_parser.parseURL(NATURE_URL);
+  nature_feed.items.forEach(item => {
+    const title = `${item.title}`
+    const text = title.split('https://go.nature.com')[0]
+    const link_uri = title.split('https://go.nature.com')[1].split(' ')[0]
+    const text_link = `https://go.nature.com`+link_uri
+    itemElement_NATURE.innerHTML += `<li class="feed-nature-item"><a class="feed-nature-item-url" href="${text_link}">${text}</a><span class="feed-tag feed-nature-item-pubdate">${item.pubDate}</span></li>`
+  });
+})();
+
+const GUARDIAN_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.theguardian.com/world/rss"
+let guardian_parser = new RSSParser();
+var itemElement_GUARDIAN = document.getElementById("feed-guardian");
+(async () => {
+
+    let guardian_feed = await guardian_parser.parseURL(GUARDIAN_URL);
+  
+    guardian_feed.items.forEach(item => {
+      itemElement_GUARDIAN.innerHTML += `<li class="feed-guardian-item"><a class="feed-guardian-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-guardian-item-pubdate">${item.pubDate}</span></li>`
+    });
+  })();
+  
+
+const WIRED_URL = "https://cors-proxy.aaronsdevera.workers.dev/?https://www.wired.com/feed/category/business/latest/rss"
+let wired_parser = new RSSParser();
+var itemElement_WIRED = document.getElementById("feed-wired");
+(async () => {
+
+    let wired_feed = await wired_parser.parseURL(WIRED_URL);
+  
+    wired_feed.items.forEach(item => {
+      itemElement_WIRED.innerHTML += `<li class="feed-wired-item"><a class="feed-wired-item-url" href="${item.link}">${item.title}</a><span class="feed-tag feed-wired-item-pubdate">${item.pubDate}</span></li>`
+    });
+  })();
 
 document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
     var count = 0;
