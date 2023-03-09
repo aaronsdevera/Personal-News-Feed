@@ -56,8 +56,16 @@ def check_url(url: str, headline: str):
 def poll_feed(source_name: str, source_type: str, feed_url: str):
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
-        headline = entry.title
-        url = entry.link
+        headline = None
+        try:
+            headline = entry.title
+        except:
+            pass
+        url = None
+        try:
+            url = entry.link
+        except:
+            pass
         created_at = None
         try:
             created_at = entry.published
