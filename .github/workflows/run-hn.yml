@@ -1,10 +1,13 @@
 name: poll hackernews
 
 on:
+  push:
+    branches:
+      - add/server-caching-model
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '*/5 * * * *'
-    
+
 jobs:
   poll:
     runs-on: ubuntu-latest
