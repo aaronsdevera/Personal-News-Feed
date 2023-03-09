@@ -83,3 +83,5 @@ def run():
         feed_url = source['feed_url']
         print(f'Polling {source_name} ({source_type})')
         poll_feed(source_name, source_type, feed_url)
+
+run()
