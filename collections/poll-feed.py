@@ -80,7 +80,7 @@ def run():
     for source in sources:
         source_name = source['source_name']
         source_type = source['source_type']
-        feed_url = source['feed_url']
+        feed_url = source['url']
         print(f'Polling {source_name} ({source_type})')
         poll_feed(source_name, source_type, feed_url)
 
