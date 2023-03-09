@@ -92,4 +92,6 @@ def run():
         print(f'Polling {source_name} ({source_type})')
         poll_feed(source_name, source_type, feed_url)
 
-run()
+SOURCE_NAME = sys.argv[1]
+SOURCE_TYPE = sys.argv[2]
+FEED_URL = sys.argv[3]
