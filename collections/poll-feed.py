@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import feedparser
 import requests
 import hashlib
@@ -75,8 +76,7 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
                 print(f'Error: {r.status_code} {r.text}')
 
 def run():
-    INFILE = sys.argv[1]
-    sources = pd.read_csv(INFILE).to_dict(orient='records')
+    sources = json.load(open('rss_sources.json')
     for source in sources:
         source_name = source['source_name']
         source_type = source['source_type']

@@ -1,5 +1,4 @@
 source_name,source_type,url
-"Hacker News",tech,https://hacker-news.firebaseio.com/v0/topstories.json
 Bloomberg,business,https://nitter.net/business/rss
 "Ars Technica",tech,https://feeds.feedburner.com/arstechnica/index
 "The Verge",tech,https://www.theverge.com/rss/index.xml
