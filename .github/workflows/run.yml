@@ -12,8 +12,7 @@ jobs:
       DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
       DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py;
+    - name: Use stuff
+      uses: actions/checkout@v3
+      uses: actions/setup-python@v4
+      run: cd collections; pip install -r requirements.txt; python3 poll-feed.py;
