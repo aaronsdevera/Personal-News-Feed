@@ -76,7 +76,7 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
                 print(f'Error: {r.status_code} {r.text}')
 
 def run():
-    sources = json.load(open('rss_sources.json')
+    sources = json.load(open('rss_sources.json'))
     for source in sources:
         source_name = source['source_name']
         source_type = source['source_type']
