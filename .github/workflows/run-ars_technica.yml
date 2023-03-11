@@ -1,12 +1,13 @@
-name: poll npr
+name: poll ars technica
 
 on:
+  workflow_dispatch:
+    schedule:
+    - cron:  '*/5 * * * *'
   push:
     branches:
       - add/server-caching-model
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  "*/5 * * * *"
+
 jobs:
   poll:
     runs-on: ubuntu-latest
@@ -19,4 +20,4 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'The New Yorker' 'news' 'https://www.newyorker.com/feed/everything';
+    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'Ars Technica' 'tech' 'https://feeds.feedburner.com/arstechnica/index';

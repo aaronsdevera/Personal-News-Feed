@@ -9,7 +9,7 @@ for source in sources:
     source_name_lower = source_name.lower()
     source_name_lower_oneword = source_name.lower().replace(' ','_')
 
-    template = open('../.github/workflows/run-tmp.yml').read()
+    template = open('../.github/workflows/run-tmp.yml.disabled').read()
 
     template = template.replace('<REPLACE_SOURCE_NAME_TITLE>',source_name_lower)
     template = template.replace('<REPLACE_SOURCE_NAME>',source_name)
