@@ -2,7 +2,7 @@
   {
     "source_name": "Bloomberg",
     "source_type": "business",
-    "url": "https://nitter.net/business/rss"
+    "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
   },
   {
     "source_name": "Ars Technica",

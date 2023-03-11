@@ -1,5 +1,5 @@
 source_name,source_type,url
-Bloomberg,business,https://nitter.net/business/rss
+Bloomberg,business,https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en
 "Ars Technica",tech,https://feeds.feedburner.com/arstechnica/index
 "The Verge",tech,https://www.theverge.com/rss/index.xml
 "The Intercept",politics,https://theintercept.com/feed/?lang=en
