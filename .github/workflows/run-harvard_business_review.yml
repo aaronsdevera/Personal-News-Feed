@@ -20,7 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-    - run: cd collections;
-    - run: pip install -r requirements.txt;
+    - run: pip install -r collections/requirements.txt;
     - name: Poll from feed
-      run: python3 poll-feed.py 'Harvard Business Review' 'business' 'https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss';
+      run: python3 collections/poll-feed.py 'Harvard Business Review' 'business' 'https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss';

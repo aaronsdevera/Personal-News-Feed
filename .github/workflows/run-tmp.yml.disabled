@@ -20,7 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-    - run: cd collections;
-    - run: pip install -r requirements.txt;
+    - run: pip install -r collections/requirements.txt;
     - name: Poll from feed
-      run: python3 poll-feed.py '<REPLACE_SOURCE_NAME>' '<REPLACE_SOURCE_TYPE>' '<REPLACE_FEED_URL>';
+      run: python3 collections/poll-feed.py '<REPLACE_SOURCE_NAME>' '<REPLACE_SOURCE_TYPE>' '<REPLACE_FEED_URL>';

@@ -20,7 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-    - run: cd collections;
-    - run: pip install -r requirements.txt;
+    - run: pip install -r collections/requirements.txt;
     - name: Poll from feed
-      run: python3 poll-feed.py 'DoJ' 'news' 'https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All';
+      run: python3 collections/poll-feed.py 'DoJ' 'news' 'https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All';
