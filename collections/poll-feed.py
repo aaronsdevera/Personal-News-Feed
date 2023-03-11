@@ -27,7 +27,7 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
     }
     if created_at:
         payload.update({'created_at': created_at})
-
+    
     r = requests.post(
         DATA_SINK_URL,
         json=payload,
