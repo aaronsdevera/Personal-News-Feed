@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '*/5 * * * *'
+  push:
+    branches:
+      - main
 
 env:
   DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
