@@ -2,22 +2,22 @@ name: poll doj
 
 on:
   workflow_dispatch:
-    schedule:
+  schedule:
     - cron:  '*/5 * * * *'
-  push:
-    branches:
-      - add/server-caching-model
+
+env:
+  DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
+  DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
 
 jobs:
-  poll:
+  build:
     runs-on: ubuntu-latest
     environment: production
-    env:
-      DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
-      DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
+    
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'DoJ' 'news' 'https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All';
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+    - run: cd collections;
+    - run: pip install -r requirements.txt;
+    - name: Poll from feed
+      run: python3 poll-feed.py 'DoJ' 'news' 'https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All';
