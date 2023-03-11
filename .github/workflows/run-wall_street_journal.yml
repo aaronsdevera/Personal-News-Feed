@@ -18,6 +18,8 @@ jobs:
     environment: production
     
     steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
     - run: cd collections;
     - run: pip install -r requirements.txt;
     - name: Poll from feed
