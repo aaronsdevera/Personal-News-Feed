@@ -43,7 +43,7 @@ export default function Home({ headlines }) {
         <div className="feed">
             <ul>
             {headlines.map((entry) => (
-                <li className="feed-item">
+                <li className="feed-item" key={entry.id}>
                   <a className="feed-item-headline" href={entry.url}>{entry.headline}</a>
                   <span className="feed-tag feed-item-sourcename">{entry.source_name}</span>
                   <span className="feed-tag feed-item-sourcetype">{entry.source_type}</span>
@@ -53,7 +53,7 @@ export default function Home({ headlines }) {
           </ul>
         </div>
       </main>
-      <Script>
+      <Script id="app_script">
         {`document.getElementById("insert-time").innerHTML = new Date().toISOString();
           document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
               var count = 0;
