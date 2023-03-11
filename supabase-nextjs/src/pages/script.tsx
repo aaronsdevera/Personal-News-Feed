@@ -1,7 +1,11 @@
+import Script from 'next/script'
+
 export default function ClientScript() {
   return (
     <>
-    {`alert(1)`}
+    <Script>
+      {`document.addEventListener('DOMContentLoaded', alert('Hello, world!'))`}
+    </Script>
     </>
   )
 }

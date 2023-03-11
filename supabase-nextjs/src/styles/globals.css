@@ -92,6 +92,7 @@ a:hover {
   color: #ffffff;
   border:none;
   width:150px;
+  font-weight: bold;
 }
 
 .site-tag input::placeholder {
@@ -160,3 +161,14 @@ a:hover {
   background: #cccccc;
 }
 
+
+.tag-highlight {
+  background: #ff0000;
+  color:#ffffff;
+}
+
+#highlight-results{
+  background:#000000;
+  color:#aaaaaa;
+  padding:0px 4px 0px 4px;
+}

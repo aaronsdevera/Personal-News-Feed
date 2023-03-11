@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import styles from '@/styles/Home.module.css'
 //import Feed from './feed'
-import { supabase } from './supabaseClient'
+import { supabase } from './components/supabaseClient'
 
 export async function getServerSideProps() {
   let { data } = await supabase.from('headlines').select('*').order('created_at', { ascending: false }).limit(250);
@@ -53,7 +53,33 @@ export default function Home({ headlines }) {
           </ul>
         </div>
       </main>
-      
+      <Script>
+        {`document.getElementById("insert-time").innerHTML = new Date().toISOString();
+          document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
+              var count = 0;
+              const highlighted = document.querySelectorAll('.tag-highlight');
+              highlighted.forEach((list_item) => {
+                  list_item.classList.remove('tag-highlight');
+              })
+            
+              const currentValue = document.getElementById('site-tag-input').value;
+              const elements = document.querySelectorAll('.feed li a')
+              elements.forEach((list_item) => {
+                  if (String(list_item.innerHTML).toLowerCase().includes(currentValue.toLowerCase())) {
+                      list_item.classList.add('tag-highlight')
+                      count += 1
+                      document.getElementById('highlight-results').innerHTML = (count.toString() + ' results')
+                  }
+              })
+              if (document.getElementById('site-tag-input').value === ''){
+                  const highlighted = document.querySelectorAll('.tag-highlight');
+                  highlighted.forEach((list_item) => {
+                      list_item.classList.remove('tag-highlight');
+                  })
+                  document.getElementById('highlight-results').innerHTML = '';
+              }
+          });`}
+      </Script>
     </>
   )
 }
