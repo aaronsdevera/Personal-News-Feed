@@ -16,3 +16,4 @@ Wired,tech,https://www.wired.com/feed/category/business/latest/rss
 StackOverflow,tech,https://stackoverflow.blog/feed/
 NPR,news,https://feeds.npr.org/500005/podcast.xml
 The New Yorker,news,https://www.newyorker.com/feed/everything
+DoJ,news,https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All

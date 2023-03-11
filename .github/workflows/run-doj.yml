@@ -19,4 +19,4 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'The New Yorker' 'news' 'https://www.newyorker.com/feed/everything';
+    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'DoJ' 'news' 'https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All';
