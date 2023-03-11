@@ -1,0 +1,23 @@
+name: poll neural
+
+on:
+  workflow_dispatch:
+    schedule:
+    - cron:  '*/5 * * * *'
+  push:
+    branches:
+      - add/server-caching-model
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
+      DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: cd collections; pip install -r requirements.txt; python3 poll-feed.py 'Neural' 'tech' 'https://neural.it/customfeed/all.php';
