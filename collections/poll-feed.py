@@ -73,15 +73,16 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
         except:
             pass
         if not check_url(url,headline):
-            r = sink_data(
-                source_name=source_name,
-                source_type=source_type,
-                headline=headline,
-                url=url,
-                created_at=created_at
-            )
-            if r.status_code not in (201,200):
-                print(f'Error: {r.status_code} {r.text}')
+            if source_name and source_type and headline and url:
+                r = sink_data(
+                    source_name=source_name,
+                    source_type=source_type,
+                    headline=headline,
+                    url=url,
+                    created_at=created_at
+                )
+                if r.status_code not in (201,200):
+                    print(f'Error: {r.status_code} {r.text}')
 
 def run():
     sources = json.load(open('rss_sources.json'))
