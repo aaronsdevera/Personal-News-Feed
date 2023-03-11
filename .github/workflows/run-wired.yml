@@ -6,7 +6,7 @@ on:
       - add/server-caching-model
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/10 * * * *'
+    - cron:  "*/5 * * * *"
 jobs:
   poll:
     runs-on: ubuntu-latest
