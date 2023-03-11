@@ -3,3 +3,5 @@ bin
 include
 lib
 pyvenvcfg
+.env
+.env.local
