@@ -30,7 +30,7 @@ export async function getServerSideProps() {
   }
 }
 
-export default function Home( { headlines } ) {
+export default function Home( headlines: any ) {
   return (
     <>
       <Head>
