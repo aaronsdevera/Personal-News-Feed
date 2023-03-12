@@ -21,15 +21,17 @@ Inspired by [hackurls](https://hackurls.com/).
 - Dumb easy to update
 
 **Built with**
-- [Eleventy](https://www.11ty.dev/)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
-- [Cloudflare Worker CORS proxy](https://developers.cloudflare.com/workers/examples/cors-header-proxy)
-- [Nitter](https://nitter.net/)
+- [NextJS](https://nextjs.org/)
+- [Vercel](https://vercel.com)
+- [Supabase](https://supabase.com/)
 
 **Running site in dev mode**
 ```
-eleventy --input=src/ --serve
+npm run dev
 ```
 
 **Deployment**
-Automatically build and deployed with new `git push` events to `main` branch; see Cloudflare Pages
+Automatically build and deployed with new `git push` events to `main` branch; see Vercel
+
+**Adding new sources**
+Edit [`collections/rss_sources.json`](./collections/rss_sources.json) and add an entry with the `source_name`, `source_type`, and `url` to the RSS feed. Then, run `python3 produce_yml.py` in the `collections` directory to create all the GitHub workflows with the scheduled RSS jobs.

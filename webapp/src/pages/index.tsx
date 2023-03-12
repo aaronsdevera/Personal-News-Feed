@@ -1,16 +1,21 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Script from 'next/script'
 import styles from '@/styles/Home.module.css'
-//import Feed from './feed'
 import { AppProps } from 'next/app'
+import { supabase } from './supabaseClient'
 
-import { createClient } from "@supabase/supabase-js";
-
-let supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!; 
-let supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
+type HeadlineEntry = {
+  id: string,
+  created_at: string,
+  headline: string,
+  url: string,
+  source_name: string,
+  source_type: string,
+  source_name_sha256: string,
+  source_type_sha256: string,
+  headline_sha256: string,
+  url_sha256: string
+}
 
 export async function getServerSideProps() {
   let { data } = await supabase.from('headlines').select('*').order('created_at', { ascending: false }).limit(250);
@@ -21,7 +26,7 @@ export async function getServerSideProps() {
   }
 }
 
-export default function Home( headlines: any ) {
+export default function Home( { headlines } ) {
   return (
     <>
       <Head>
@@ -49,7 +54,7 @@ export default function Home( headlines: any ) {
 
         <div className="feed">
             <ul>
-            {headlines.map((entry: any) => (
+            {headlines.map((entry: HeadlineEntry) => (
                 <li className="feed-item" key={entry.id}>
                   <a className="feed-item-headline" href={entry.url}>{entry.headline}</a>
                   <span className="feed-tag feed-item-sourcename">{entry.source_name}</span>
