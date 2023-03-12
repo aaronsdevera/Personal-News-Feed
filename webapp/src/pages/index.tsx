@@ -3,23 +3,14 @@ import Image from 'next/image'
 import Script from 'next/script'
 import styles from '@/styles/Home.module.css'
 //import Feed from './feed'
-import { supabase } from './components/supabaseClient'
 import { AppProps } from 'next/app'
 
-type HeadlineEntry = {
-  id: string,
-  created_at: string,
-  headline: string,
-  url: string,
-  source_name: string,
-  source_type: string,
-  source_name_sha256: string,
-  source_type_sha256: string,
-  headline_sha256: string,
-  url_sha256: string
-}
+import { createClient } from "@supabase/supabase-js";
 
-type HeadlineEntryArray = Array<HeadlineEntry>
+let supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!; 
+let supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function getServerSideProps() {
   let { data } = await supabase.from('headlines').select('*').order('created_at', { ascending: false }).limit(250);
