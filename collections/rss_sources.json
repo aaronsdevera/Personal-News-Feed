@@ -83,5 +83,10 @@
     "source_name": "DoJ",
     "source_type": "news",
     "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
+  },
+  {
+    "source_name": "The Information", 
+    "source_type": "tech",
+    "url": "https://www.theinformation.com/feed"
   }
 ]
