@@ -58,7 +58,7 @@ export default function Home( headlines: any ) {
 
         <div className="feed">
             <ul>
-            {headlines.map((entry) => (
+            {headlines.map((entry: any) => (
                 <li className="feed-item" key={entry.id}>
                   <a className="feed-item-headline" href={entry.url}>{entry.headline}</a>
                   <span className="feed-tag feed-item-sourcename">{entry.source_name}</span>
