@@ -18,12 +18,13 @@ type HeadlineEntry = {
 }
 
 export async function getServerSideProps() {
-  let headlines_array: HeadlineEntry[] = [];
+  let headlines_array: Object[] = []; //HeadlineEntry[] = [];
   let { data } = await supabase.from('headlines').select('*').order('created_at', { ascending: false }).limit(250);
 
-  data?.forEach((entry: HeadlineEntry) => {
+  data?.forEach((entry: Object) => {
     headlines_array.push(entry);
   });
+
   return {
     props: {
      "headlines_array": headlines_array
