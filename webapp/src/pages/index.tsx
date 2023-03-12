@@ -18,15 +18,16 @@ type HeadlineEntry = {
 }
 
 export async function getServerSideProps() {
+  let headlines_array: HeadlineEntry[] = [];
   let { data } = await supabase.from('headlines').select('*').order('created_at', { ascending: false }).limit(250);
   return {
     props: {
-     headlines: data
+     headlines_array: data
     },
   }
 }
 
-export default function Home( { headlines } ) {
+export default function Home( { "headlines_array": headlines_array } ) {
   return (
     <>
       <Head>
@@ -54,7 +55,7 @@ export default function Home( { headlines } ) {
 
         <div className="feed">
             <ul>
-            {headlines.map((entry: HeadlineEntry) => (
+            {headlines_array.map((entry: HeadlineEntry) => (
                 <li className="feed-item" key={entry.id}>
                   <a className="feed-item-headline" href={entry.url}>{entry.headline}</a>
                   <span className="feed-tag feed-item-sourcename">{entry.source_name}</span>
