@@ -20,6 +20,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  let { data } = await supabase.from('sources').select('*').order('created_at', { ascending: false }).limit(250);
+  let { data } = await supabase.from('sources').select('*').order('created_at', { ascending: true }).limit(250);
   res.status(200).json(data)
 }
