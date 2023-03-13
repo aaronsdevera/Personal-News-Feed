@@ -27,12 +27,13 @@ export async function getServerSideProps() {
 
   return {
     props: {
-     "headlines_array": headlines_array
+      headlines_array
     },
   }
 }
 
-export default function Home( { "headlines_array": headlines_array } ) {
+// export default function Home( { headlines_array }: { headlines_array: Object[]}) {
+export default function Home( { headlines_array } ) {
   return (
     <>
       <Head>
