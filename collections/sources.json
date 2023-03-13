@@ -158,6 +158,41 @@
         "created_at": "2023-03-13T01:27:08.484731+00:00",
         "source_name": "Matt Tait",
         "source_type": "blog",
-        "url": "https://www.pwnallthethings.com/"
+        "url": "https://www.pwnallthethings.com/feed"
+    },
+    {
+        "id": "f9d844e0-b74a-42c6-b017-219eeb2eb408",
+        "created_at": "2023-03-13T01:27:57.127588+00:00",
+        "source_name": "Steve Vladeck",
+        "source_type": "blog",
+        "url": "https://stevevladeck.substack.com/feed"
+    },
+    {
+        "id": "af013af4-2352-425a-baa8-3c60eef71b9e",
+        "created_at": "2023-03-13T01:28:13.910232+00:00",
+        "source_name": "Ben Wittes",
+        "source_type": "blog",
+        "url": "https://www.dogshirtdaily.com/feed"
+    },
+    {
+        "id": "e0d23bb1-905a-4ef1-bbbf-780448c39061",
+        "created_at": "2023-03-13T01:31:29.345176+00:00",
+        "source_name": "Shannon Liao",
+        "source_type": "blog",
+        "url": "https://shannonliao.substack.com/feed"
+    },
+    {
+        "id": "26c8f197-b40d-4d82-9cb5-4fdf13d8d429",
+        "created_at": "2023-03-13T01:31:56.262386+00:00",
+        "source_name": "Shoshana Wodinsky",
+        "source_type": "blog",
+        "url": "https://swodinsky.substack.com/feed"
+    },
+    {
+        "id": "9929ae3c-38c0-445a-8aa5-c2ca09ab7c3f",
+        "created_at": "2023-03-13T01:32:30.060714+00:00",
+        "source_name": "Conspirador Norteno",
+        "source_type": "blog",
+        "url": "https://conspirator0.substack.com/feed"
     }
 ]

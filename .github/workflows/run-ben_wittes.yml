@@ -1,4 +1,4 @@
-name: poll matt tait
+name: poll ben wittes
 
 on:
   workflow_dispatch:
@@ -22,4 +22,4 @@ jobs:
     - uses: actions/setup-python@v4
     - run: pip install -r collections/requirements.txt;
     - name: Poll from feed
-      run: python3 collections/poll-feed.py 'Matt Tait' 'blog' 'https://www.pwnallthethings.com/feed';
+      run: python3 collections/poll-feed.py 'Ben Wittes' 'blog' 'https://www.dogshirtdaily.com/feed';
