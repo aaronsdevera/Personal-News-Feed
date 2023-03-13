@@ -1,6 +1,6 @@
 import json
 
-sources = json.load(open('rss_sources.json'))
+sources = json.load(open('sources.json'))
 
 for source in sources:
     source_name = source['source_name']

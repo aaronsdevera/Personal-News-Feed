@@ -1,128 +1,142 @@
 [
-  {
-    "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Bloomberg",
-    "source_type": "business",
-    "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
-  },
-  {
-    "id": "b54fc7df-6442-4280-ab76-d184043194b0",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Ars Technica",
-    "source_type": "tech",
-    "url": "https://feeds.feedburner.com/arstechnica/index"
-  },
-  {
-    "id": "25326a5a-4e78-4443-b5e0-4f12ae74c5b3",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "The Verge",
-    "source_type": "tech",
-    "url": "https://www.theverge.com/rss/index.xml"
-  },
-  {
-    "id": "c27fd3f2-4f7d-4004-8516-c35bd1b59a8d",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "The Intercept",
-    "source_type": "politics",
-    "url": "https://theintercept.com/feed/?lang=en"
-  },
-  {
-    "id": "5578ecdc-c4c1-41e8-a26f-60df6b82e13a",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Neural",
-    "source_type": "tech",
-    "url": "https://neural.it/customfeed/all.php"
-  },
-  {
-    "id": "0430077f-c21a-4075-b83b-7f415246064f",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "MIT Technology Review",
-    "source_type": "science",
-    "url": "https://www.technologyreview.com/feed/"
-  },
-  {
-    "id": "009f7185-85a6-42aa-839e-5f441836dfdd",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Hackaday",
-    "source_type": "tech",
-    "url": "https://hackaday.com/blog/feed/"
-  },
-  {
-    "id": "8fec7ac3-f520-4b8e-8ffa-e0f388ebbcc9",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "New York Times",
-    "source_type": "news",
-    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-  },
-  {
-    "id": "4f276646-b7ef-4fae-abe2-57312ab0c3d6",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Wall Street Journal",
-    "source_type": "news",
-    "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
-  },
-  {
-    "id": "7fe1dc35-c485-485b-bdfe-acf9fa43cb51",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Roll Call",
-    "source_type": "politics",
-    "url": "https://nitter.net/rollcall/rss"
-  },
-  {
-    "id": "49c5eb4b-13c7-4dda-9201-f06ecca59d6b",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Nature",
-    "source_type": "science",
-    "url": "https://www.nature.com/nature.rss"
-  },
-  {
-    "id": "0baad7a4-ef07-4795-8eaa-ea92770d8fdc",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "The Guardian",
-    "source_type": "news",
-    "url": "https://www.theguardian.com/world/rss"
-  },
-  {
-    "id": "3b96d1e6-c17e-4da8-8264-b74cb5173999",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Wired",
-    "source_type": "tech",
-    "url": "https://www.wired.com/feed/category/business/latest/rss"
-  },
-  {
-    "id": "a7617a4f-174c-4895-8e99-f5a800d7c67c",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "Harvard Business Review",
-    "source_type": "business",
-    "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss"
-  },
-  {
-    "id": "d2d1cb3d-5ad3-4482-9136-261ead64f1ad",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "StackOverflow",
-    "source_type": "tech",
-    "url": "https://stackoverflow.blog/feed/"
-  },
-  {
-    "id": "7fa54845-8580-4154-b3f9-ba53ec79253f",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "The New Yorker",
-    "source_type": "news",
-    "url": "https://www.newyorker.com/feed/everything"
-  },
-  {
-    "id": "a724efb4-b6a9-44d2-a912-fab9acce570a",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "DoJ",
-    "source_type": "news",
-    "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
-  },
-  {
-    "id": "9cf70dc7-8759-46c6-8584-82f759a069ed",
-    "created_at": "2023-03-13T00:51:16.853985+00:00",
-    "source_name": "The Information",
-    "source_type": "tech",
-    "url": "https://www.theinformation.com/feed"
-  }
+    {
+        "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Bloomberg",
+        "source_type": "business",
+        "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+        "id": "b54fc7df-6442-4280-ab76-d184043194b0",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Ars Technica",
+        "source_type": "tech",
+        "url": "https://feeds.feedburner.com/arstechnica/index"
+    },
+    {
+        "id": "25326a5a-4e78-4443-b5e0-4f12ae74c5b3",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "The Verge",
+        "source_type": "tech",
+        "url": "https://www.theverge.com/rss/index.xml"
+    },
+    {
+        "id": "c27fd3f2-4f7d-4004-8516-c35bd1b59a8d",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "The Intercept",
+        "source_type": "politics",
+        "url": "https://theintercept.com/feed/?lang=en"
+    },
+    {
+        "id": "5578ecdc-c4c1-41e8-a26f-60df6b82e13a",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Neural",
+        "source_type": "tech",
+        "url": "https://neural.it/customfeed/all.php"
+    },
+    {
+        "id": "0430077f-c21a-4075-b83b-7f415246064f",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "MIT Technology Review",
+        "source_type": "science",
+        "url": "https://www.technologyreview.com/feed/"
+    },
+    {
+        "id": "009f7185-85a6-42aa-839e-5f441836dfdd",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Hackaday",
+        "source_type": "tech",
+        "url": "https://hackaday.com/blog/feed/"
+    },
+    {
+        "id": "8fec7ac3-f520-4b8e-8ffa-e0f388ebbcc9",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "New York Times",
+        "source_type": "news",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    },
+    {
+        "id": "4f276646-b7ef-4fae-abe2-57312ab0c3d6",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Wall Street Journal",
+        "source_type": "news",
+        "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+    },
+    {
+        "id": "7fe1dc35-c485-485b-bdfe-acf9fa43cb51",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Roll Call",
+        "source_type": "politics",
+        "url": "https://nitter.net/rollcall/rss"
+    },
+    {
+        "id": "49c5eb4b-13c7-4dda-9201-f06ecca59d6b",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Nature",
+        "source_type": "science",
+        "url": "https://www.nature.com/nature.rss"
+    },
+    {
+        "id": "0baad7a4-ef07-4795-8eaa-ea92770d8fdc",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "The Guardian",
+        "source_type": "news",
+        "url": "https://www.theguardian.com/world/rss"
+    },
+    {
+        "id": "3b96d1e6-c17e-4da8-8264-b74cb5173999",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Wired",
+        "source_type": "tech",
+        "url": "https://www.wired.com/feed/category/business/latest/rss"
+    },
+    {
+        "id": "a7617a4f-174c-4895-8e99-f5a800d7c67c",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "Harvard Business Review",
+        "source_type": "business",
+        "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss"
+    },
+    {
+        "id": "d2d1cb3d-5ad3-4482-9136-261ead64f1ad",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "StackOverflow",
+        "source_type": "tech",
+        "url": "https://stackoverflow.blog/feed/"
+    },
+    {
+        "id": "7fa54845-8580-4154-b3f9-ba53ec79253f",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "The New Yorker",
+        "source_type": "news",
+        "url": "https://www.newyorker.com/feed/everything"
+    },
+    {
+        "id": "a724efb4-b6a9-44d2-a912-fab9acce570a",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "DoJ",
+        "source_type": "news",
+        "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
+    },
+    {
+        "id": "9cf70dc7-8759-46c6-8584-82f759a069ed",
+        "created_at": "2023-03-13T00:51:16.853985+00:00",
+        "source_name": "The Information",
+        "source_type": "tech",
+        "url": "https://www.theinformation.com/feed"
+    },
+    {
+        "id": "abcb1893-1460-4e24-aa5e-75e068ae786e",
+        "created_at": "2023-03-13T01:08:59.34904+00:00",
+        "source_name": "Eugene Yan",
+        "source_type": "blog",
+        "url": "https://eugeneyan.com/rss/"
+    },
+    {
+        "id": "56c01fa9-b49e-43c9-8c69-e419cb9e24c8",
+        "created_at": "2023-03-13T01:11:47.053587+00:00",
+        "source_name": "The Grugq",
+        "source_type": "blog",
+        "url": "https://grugq.substack.com/feed"
+    }
 ]
