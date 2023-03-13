@@ -2,7 +2,13 @@ import Head from 'next/head'
 import Script from 'next/script'
 import styles from '@/styles/Home.module.css'
 import { AppProps } from 'next/app'
-import { supabase } from './supabaseClient'
+
+import { createClient } from "@supabase/supabase-js";
+
+let supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!; 
+let supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 type HeadlineEntry = {
   id: string,
