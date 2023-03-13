@@ -40,8 +40,11 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
 
 def check_url(url: str, headline: str):
     url_sha256 = sha256_hash(url)
-    headline_sha256 = sha256_hash(headline)
-    r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&headline_sha256=eq.{headline_sha256}&select=*',
+    # headline_sha256 = sha256_hash(headline)
+    # original
+    #r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&headline_sha256=eq.{headline_sha256}&select=*',
+    #
+    r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&select=*',
         headers={
             'apikey': DATA_SINK_API_KEY,
             'authorization': f'Bearer {DATA_SINK_API_KEY}'
