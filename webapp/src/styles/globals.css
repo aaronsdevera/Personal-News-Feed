@@ -7,6 +7,8 @@
   --font-family: 'Arial', 'Helvetica', 'sans-serif';
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+  --foreground-rgb-dark: 255, 255, 255;
+  --background-rgb-dark: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +32,6 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
 }
@@ -81,15 +82,17 @@ a:hover {
   padding:5px;
 }
 
-.site-tag {
-  background: #000000;
+.site-mode {
+  background: rgb(var(--background-rgb-dark));
   color:#ffffff;
   padding:5px;
 }
 
+.site-tag {
+  padding:5px;
+}
+
 .site-tag input {
-  background: #000000;
-  color: #ffffff;
   border:none;
   width:160px;
   font-weight: bold;
@@ -109,8 +112,6 @@ a:hover {
 }
 
 #highlight-results{
-  background:#000000;
-  color:#aaaaaa;
   padding:0px 4px 0px 4px;
 }
 
@@ -180,4 +181,20 @@ footer {
   text-align: center;
   font-size: 12px;
   color: #aaaaaa;
+}
+
+.light-mode-text {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark-mode-text {
+  color: rgb(var(--foreground-rgb-dark));
+}
+
+.light-mode-background {
+  background: rgb(var(--background-rgb));
+}
+
+.dark-mode-background {
+  background: rgb(var(--background-rgb-dark));
 }
