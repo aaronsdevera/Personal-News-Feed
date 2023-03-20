@@ -61,7 +61,10 @@ export default function Home( { headlines_array } ) {
             <h3><span id="insert-time" className="site-time"></span></h3>
           </div>
           <div className="headerItem">
-            <h3><span id="insert-tag" className="site-tag"><input id="site-tag-input" placeholder="insert a term to highlight"></input><span id="highlight-results"></span></span></h3>
+            <h3><span id="insert-mode" className="site-mode">🌒</span></h3>
+          </div>
+          <div className="headerItem">
+            <h3><span id="insert-tag" className="site-tag dark-mode-text dark-mode-background"><input id="site-tag-input" className="dark-mode-background" placeholder="insert a term to highlight"></input><span id="highlight-results" className="light-mode-text dark-mode-background"></span></span></h3>
           </div>
         </div>
 
@@ -69,17 +72,17 @@ export default function Home( { headlines_array } ) {
             <ul>
             {headlines_array.map((entry: HeadlineEntry) => (
                 <li className="feed-item" key={entry.id}>
-                  <a className="feed-item-headline" href={entry.url}>{entry.headline}</a>
+                  <a className="feed-item-headline light-mode-text" href={entry.url}>{entry.headline}</a>
                   <span className="feed-tag feed-item-sourcename">{entry.source_name}</span>
                   <span className="feed-tag feed-item-sourcetype">{entry.source_type}</span>
-                  <span className="feed-tag feed-item-createdat">{entry.created_at}</span>
+                  <span className="feed-tag feed-item-createdat light-mode-text">{entry.created_at}</span>
                 </li>
             ))}
           </ul>
         </div>
       </main>
       <Script id="app_script">
-        {`document.getElementById("insert-time").innerHTML = new Date().toISOString();
+        {`let MODE=0;document.getElementById("insert-time").innerHTML = new Date().toISOString();
           document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
               var count = 0;
               const highlighted = document.querySelectorAll('.tag-highlight');
@@ -103,7 +106,77 @@ export default function Home( { headlines_array } ) {
                   })
                   document.getElementById('highlight-results').innerHTML = '';
               }
-          });`}
+          });const switchMode = function(mode) {
+            if(!mode) {
+              document.getElementById('insert-mode').classList.remove("dark-mode-text");
+              document.getElementById('insert-mode').classList.remove("dark-mode-background");
+              document.body.classList.remove("light-mode-text");
+              document.body.classList.remove("light-mode-background");
+              document.getElementById('insert-tag').classList.remove("dark-mode-background");
+              document.getElementById('site-tag-input').classList.remove("dark-mode-background");
+              document.getElementById('highlight-results').classList.remove("dark-mode-text");
+              document.getElementById('highlight-results').classList.remove("dark-mode-background");
+
+              var headlineItems = document.getElementsByClassName('feed-item-headline');
+              for (let i = 0; i < headlineItems.length; i++) {
+                headlineItems[i].classList.remove("light-mode-text");
+              }
+
+              document.getElementById('insert-mode').classList.add("light-mode-text");
+              document.getElementById('insert-mode').classList.add("light-mode-background");
+              document.body.classList.add("dark-mode-text");
+              document.body.classList.add("dark-mode-background");
+              document.getElementById('insert-tag').classList.add("light-mode-background");
+              document.getElementById('highlight-results').classList.add("light-mode-text");
+              document.getElementById('highlight-results').classList.add("light-mode-background");
+              document.getElementById('site-tag-input').classList.add("light-mode-text");
+              document.getElementById('site-tag-input').classList.add("light-mode-background");
+          
+              document.getElementById('insert-tag').classList.add("light-mode-background");
+              for (let i = 0; i < headlineItems.length; i++) {
+                headlineItems[i].classList.add("dark-mode-text");
+              }
+
+              mode = 1;
+            }
+            else if (mode) {
+              document.getElementById('insert-mode').classList.remove("light-mode-text");
+              document.getElementById('insert-mode').classList.remove("light-mode-background");
+              document.body.classList.remove("dark-mode-text");
+              document.body.classList.remove("dark-mode-background");
+              document.getElementById('insert-tag').classList.remove("light-mode-background");
+              document.getElementById('highlight-results').classList.remove("light-mode-text");
+              document.getElementById('highlight-results').classList.remove("light-mode-background");
+              document.getElementById('site-tag-input').classList.remove("light-mode-text");
+              document.getElementById('site-tag-input').classList.remove("light-mode-background");
+          
+              document.getElementById('insert-tag').classList.add("light-mode-background");
+              
+              var headlineItems = document.getElementsByClassName('feed-item-headline');
+              for (let i = 0; i < headlineItems.length; i++) {
+                headlineItems[i].classList.remove("dark-mode-text");
+              }
+
+
+              document.getElementById('insert-mode').classList.add("dark-mode-text");
+              document.getElementById('insert-mode').classList.add("dark-mode-background");
+              document.body.classList.add("light-mode-text");
+              document.body.classList.add("light-mode-background");
+              document.getElementById('insert-tag').classList.add("dark-mode-background");
+              document.getElementById('site-tag-input').classList.add("dark-mode-background");
+              document.getElementById('highlight-results').classList.add("dark-mode-text");
+              document.getElementById('highlight-results').classList.add("dark-mode-background");
+
+              var headlineItems = document.getElementsByClassName('feed-item-headline');
+              for (let i = 0; i < headlineItems.length; i++) {
+                headlineItems[i].classList.add("light-mode-text");
+              }
+
+              mode = 0;
+            }
+            return mode
+          };
+          document.getElementById('insert-mode').addEventListener('click', (event) => {MODE = switchMode(MODE);});`}
       </Script>
     </>
   )
