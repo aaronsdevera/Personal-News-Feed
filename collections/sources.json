@@ -4,195 +4,231 @@
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Bloomberg",
         "source_type": "business",
-        "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
+        "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en",
+        "rank": 2
     },
     {
         "id": "b54fc7df-6442-4280-ab76-d184043194b0",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Ars Technica",
         "source_type": "tech",
-        "url": "https://feeds.feedburner.com/arstechnica/index"
+        "url": "https://feeds.feedburner.com/arstechnica/index",
+        "rank": 3
     },
     {
         "id": "25326a5a-4e78-4443-b5e0-4f12ae74c5b3",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "The Verge",
         "source_type": "tech",
-        "url": "https://www.theverge.com/rss/index.xml"
+        "url": "https://www.theverge.com/rss/index.xml",
+        "rank": 4
     },
     {
         "id": "c27fd3f2-4f7d-4004-8516-c35bd1b59a8d",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "The Intercept",
         "source_type": "politics",
-        "url": "https://theintercept.com/feed/?lang=en"
+        "url": "https://theintercept.com/feed/?lang=en",
+        "rank": 5
     },
     {
         "id": "5578ecdc-c4c1-41e8-a26f-60df6b82e13a",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Neural",
         "source_type": "tech",
-        "url": "https://neural.it/customfeed/all.php"
+        "url": "https://neural.it/customfeed/all.php",
+        "rank": 6
     },
     {
         "id": "0430077f-c21a-4075-b83b-7f415246064f",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "MIT Technology Review",
         "source_type": "science",
-        "url": "https://www.technologyreview.com/feed/"
+        "url": "https://www.technologyreview.com/feed/",
+        "rank": 7
     },
     {
         "id": "009f7185-85a6-42aa-839e-5f441836dfdd",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Hackaday",
         "source_type": "tech",
-        "url": "https://hackaday.com/blog/feed/"
+        "url": "https://hackaday.com/blog/feed/",
+        "rank": 8
     },
     {
         "id": "8fec7ac3-f520-4b8e-8ffa-e0f388ebbcc9",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "New York Times",
         "source_type": "news",
-        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+        "rank": 9
     },
     {
         "id": "4f276646-b7ef-4fae-abe2-57312ab0c3d6",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Wall Street Journal",
         "source_type": "news",
-        "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+        "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+        "rank": 10
     },
     {
         "id": "7fe1dc35-c485-485b-bdfe-acf9fa43cb51",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Roll Call",
         "source_type": "politics",
-        "url": "https://nitter.net/rollcall/rss"
+        "url": "https://nitter.net/rollcall/rss",
+        "rank": 11
     },
     {
         "id": "49c5eb4b-13c7-4dda-9201-f06ecca59d6b",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Nature",
         "source_type": "science",
-        "url": "https://www.nature.com/nature.rss"
+        "url": "https://www.nature.com/nature.rss",
+        "rank": 12
     },
     {
         "id": "0baad7a4-ef07-4795-8eaa-ea92770d8fdc",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "The Guardian",
         "source_type": "news",
-        "url": "https://www.theguardian.com/world/rss"
+        "url": "https://www.theguardian.com/world/rss",
+        "rank": 13
     },
     {
         "id": "3b96d1e6-c17e-4da8-8264-b74cb5173999",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Wired",
         "source_type": "tech",
-        "url": "https://www.wired.com/feed/category/business/latest/rss"
+        "url": "https://www.wired.com/feed/category/business/latest/rss",
+        "rank": 14
     },
     {
         "id": "a7617a4f-174c-4895-8e99-f5a800d7c67c",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Harvard Business Review",
         "source_type": "business",
-        "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss"
+        "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss",
+        "rank": 15
     },
     {
         "id": "d2d1cb3d-5ad3-4482-9136-261ead64f1ad",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "StackOverflow",
         "source_type": "tech",
-        "url": "https://stackoverflow.blog/feed/"
+        "url": "https://stackoverflow.blog/feed/",
+        "rank": 16
     },
     {
         "id": "7fa54845-8580-4154-b3f9-ba53ec79253f",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "The New Yorker",
         "source_type": "news",
-        "url": "https://www.newyorker.com/feed/everything"
+        "url": "https://www.newyorker.com/feed/everything",
+        "rank": 17
     },
     {
         "id": "a724efb4-b6a9-44d2-a912-fab9acce570a",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "DoJ",
         "source_type": "news",
-        "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
+        "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All",
+        "rank": 18
     },
     {
         "id": "9cf70dc7-8759-46c6-8584-82f759a069ed",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "The Information",
         "source_type": "tech",
-        "url": "https://www.theinformation.com/feed"
+        "url": "https://www.theinformation.com/feed",
+        "rank": 19
     },
     {
         "id": "abcb1893-1460-4e24-aa5e-75e068ae786e",
         "created_at": "2023-03-13T01:08:59.34904+00:00",
         "source_name": "Eugene Yan",
         "source_type": "blog",
-        "url": "https://eugeneyan.com/rss/"
+        "url": "https://eugeneyan.com/rss/",
+        "rank": 20
     },
     {
         "id": "56c01fa9-b49e-43c9-8c69-e419cb9e24c8",
         "created_at": "2023-03-13T01:11:47.053587+00:00",
         "source_name": "The Grugq",
         "source_type": "blog",
-        "url": "https://grugq.substack.com/feed"
+        "url": "https://grugq.substack.com/feed",
+        "rank": 21
     },
     {
         "id": "f1aaeb11-61cb-42b6-8bb5-d3987a948011",
         "created_at": "2023-03-13T01:25:34.439+00:00",
         "source_name": "Risky Business",
         "source_type": "blog",
-        "url": "https://riskybiznews.substack.com/feed"
+        "url": "https://riskybiznews.substack.com/feed",
+        "rank": 22
     },
     {
         "id": "cee8c7a8-f33e-454c-9b9c-a63608cdebfd",
         "created_at": "2023-03-13T01:26:26.759542+00:00",
         "source_name": "lcamtuf",
         "source_type": "blog",
-        "url": "https://lcamtuf.substack.com/feed"
+        "url": "https://lcamtuf.substack.com/feed",
+        "rank": 23
     },
     {
         "id": "007f681f-d413-4684-b69f-e0d902eb51c7",
         "created_at": "2023-03-13T01:27:08.484731+00:00",
         "source_name": "Matt Tait",
         "source_type": "blog",
-        "url": "https://www.pwnallthethings.com/feed"
+        "url": "https://www.pwnallthethings.com/feed",
+        "rank": 24
     },
     {
         "id": "f9d844e0-b74a-42c6-b017-219eeb2eb408",
         "created_at": "2023-03-13T01:27:57.127588+00:00",
         "source_name": "Steve Vladeck",
         "source_type": "blog",
-        "url": "https://stevevladeck.substack.com/feed"
+        "url": "https://stevevladeck.substack.com/feed",
+        "rank": 25
     },
     {
         "id": "af013af4-2352-425a-baa8-3c60eef71b9e",
         "created_at": "2023-03-13T01:28:13.910232+00:00",
         "source_name": "Ben Wittes",
         "source_type": "blog",
-        "url": "https://www.dogshirtdaily.com/feed"
+        "url": "https://www.dogshirtdaily.com/feed",
+        "rank": 26
     },
     {
         "id": "e0d23bb1-905a-4ef1-bbbf-780448c39061",
         "created_at": "2023-03-13T01:31:29.345176+00:00",
         "source_name": "Shannon Liao",
         "source_type": "blog",
-        "url": "https://shannonliao.substack.com/feed"
+        "url": "https://shannonliao.substack.com/feed",
+        "rank": 27
     },
     {
         "id": "26c8f197-b40d-4d82-9cb5-4fdf13d8d429",
         "created_at": "2023-03-13T01:31:56.262386+00:00",
         "source_name": "Shoshana Wodinsky",
         "source_type": "blog",
-        "url": "https://swodinsky.substack.com/feed"
+        "url": "https://swodinsky.substack.com/feed",
+        "rank": 28
     },
     {
         "id": "9929ae3c-38c0-445a-8aa5-c2ca09ab7c3f",
         "created_at": "2023-03-13T01:32:30.060714+00:00",
         "source_name": "Conspirador Norteno",
         "source_type": "blog",
-        "url": "https://conspirator0.substack.com/feed"
+        "url": "https://conspirator0.substack.com/feed",
+        "rank": 29
+    },
+    {
+        "id": "0e263eb1-3c72-406e-9ffb-04de9b45831c",
+        "created_at": "2023-03-21T21:06:10.430426+00:00",
+        "source_name": "Hacker News",
+        "source_type": "news",
+        "url": "https://news.ycombinator.com/rss",
+        "rank": null
     }
 ]
