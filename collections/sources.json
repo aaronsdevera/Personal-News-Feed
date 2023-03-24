@@ -1,5 +1,13 @@
 [
     {
+        "id": "f354a72f-b445-4981-b87f-da529a2e3f2a",
+        "created_at": "2023-03-24T14:58:16.295698+00:00",
+        "source_name": "Joshua Citarella",
+        "source_type": "blog",
+        "url": "https://joshuacitarella.substack.com/feed",
+        "rank": null
+    },
+    {
         "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Bloomberg",
@@ -229,6 +237,6 @@
         "source_name": "Hacker News",
         "source_type": "news",
         "url": "https://news.ycombinator.com/rss",
-        "rank": null
+        "rank": 1
     }
 ]
