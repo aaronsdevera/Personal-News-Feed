@@ -16,6 +16,14 @@
         "rank": null
     },
     {
+        "id": "c57b8b6e-9a0d-44ad-8eb0-fad9919c40bf",
+        "created_at": "2023-04-13T12:27:45.85758+00:00",
+        "source_name": "Convex Value",
+        "source_type": "blog",
+        "url": "https://convex.substack.com/feed",
+        "rank": null
+    },
+    {
         "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
         "created_at": "2023-03-13T00:51:16.853985+00:00",
         "source_name": "Bloomberg",
