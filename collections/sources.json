@@ -422,5 +422,29 @@
         "source_type": "news",
         "url": "https://www.ft.com/rss/home/uk",
         "rank": null
+    },
+    {
+        "id": "01988ef9-c5ff-4984-a34f-2ec8fe48b2f1",
+        "created_at": "2023-08-20T08:52:03.101493+00:00",
+        "source_name": "Global Newswire Analysis",
+        "source_type": "business",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/3-Analyst%20Recommendations/feedTitle/GlobeNewswire%20-%20Analyst%20Recommendations",
+        "rank": null
+    },
+    {
+        "id": "7e68a7bc-55d5-4343-a55d-4808119c9494",
+        "created_at": "2023-08-20T08:56:31.434835+00:00",
+        "source_name": "Global Newswire Contracts",
+        "source_type": "business",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/7-Business%20Contracts/feedTitle/GlobeNewswire%20-%20Business%20Contracts",
+        "rank": null
+    },
+    {
+        "id": "4ba902c2-c5ac-4285-8c2c-d300e0f56697",
+        "created_at": "2023-08-20T08:56:32.028711+00:00",
+        "source_name": "Global Newswire Research",
+        "source_type": "research",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/14-Economic%20Research%20And%20Reports/feedTitle/GlobeNewswire%20-%20Economic%20Research%20And%20Reports",
+        "rank": null
     }
 ]
