@@ -414,5 +414,13 @@
         "source_type": "news",
         "url": "https://thediplomat.com/category/blogs/feed/",
         "rank": null
+    },
+    {
+        "id": "03c13bb9-1bb5-4e68-bf25-b354bf32c687",
+        "created_at": "2023-08-20T08:47:59.953613+00:00",
+        "source_name": "Financial Times",
+        "source_type": "news",
+        "url": "https://www.ft.com/rss/home/uk",
+        "rank": null
     }
 ]
