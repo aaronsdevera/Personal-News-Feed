@@ -294,5 +294,69 @@
         "source_type": "blog",
         "url": "https://slic.substack.com/feed",
         "rank": null
+    },
+    {
+        "id": "0f7d0865-1949-4ad2-a2e6-3a3c8d55ce95",
+        "created_at": "2023-08-20T07:52:15.727689+00:00",
+        "source_name": "Arxiv Human Computer Interaction",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.HC",
+        "rank": null
+    },
+    {
+        "id": "19f84d71-5f06-4b2b-ba96-08f8e0e4c133",
+        "created_at": "2023-08-20T07:52:16.642908+00:00",
+        "source_name": "Arxiv Computers and Society",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.CY",
+        "rank": null
+    },
+    {
+        "id": "1c6aabb3-f5dd-45a2-8c96-b14fdbd82eb7",
+        "created_at": "2023-08-20T07:52:17.332021+00:00",
+        "source_name": "Arxiv Cryptography and Security",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.CR",
+        "rank": null
+    },
+    {
+        "id": "7110e58e-624a-403f-ac90-b4bfde1b1af9",
+        "created_at": "2023-08-20T07:52:18.086715+00:00",
+        "source_name": "Arxiv Artificial Intelligence",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.AI",
+        "rank": null
+    },
+    {
+        "id": "0d1c703b-1f7a-4315-b151-19e08f311bf0",
+        "created_at": "2023-08-20T07:52:18.881822+00:00",
+        "source_name": "Arxiv Computers Game Theory",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.GT",
+        "rank": null
+    },
+    {
+        "id": "529a21ab-f2c8-4966-9ac1-b9450e19ba7a",
+        "created_at": "2023-08-20T07:52:19.592745+00:00",
+        "source_name": "Arxiv Social Networks",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.SI",
+        "rank": null
+    },
+    {
+        "id": "af82282c-9d96-45e1-b6d7-c08a9c8b2643",
+        "created_at": "2023-08-20T07:52:20.313388+00:00",
+        "source_name": "Arxiv Information Retrieval",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.IR",
+        "rank": null
+    },
+    {
+        "id": "f256ee10-5bd6-487e-bdf6-981fc134cb37",
+        "created_at": "2023-08-20T07:52:21.080375+00:00",
+        "source_name": "Arxiv Information Theory",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.IT",
+        "rank": null
     }
 ]
