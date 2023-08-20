@@ -1,0 +1,25 @@
+name: poll hellgate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '*/5 * * * *'
+  push:
+    branches:
+      - main
+
+env:
+  DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
+  DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+    - run: pip install -r collections/requirements.txt;
+    - name: Poll from feed
+      run: python3 collections/poll-feed.py 'Hellgate' 'news' 'https://hellgatenyc.com/feed';
