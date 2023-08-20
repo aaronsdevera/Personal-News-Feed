@@ -381,6 +381,14 @@
         "source_name": "Berkman Klein Center",
         "source_type": "blog",
         "url": "https://medium.com/feed/berkman-klein-center",
+        "rank": 48
+    },
+    {
+        "id": "81c20c1f-4560-4da3-b18a-1ff9e475c14d",
+        "created_at": "2023-08-20T08:37:37.938931+00:00",
+        "source_name": "Intelligence Online",
+        "source_type": "news",
+        "url": "http://feeds.feedburner.com/IntelligenceOnline",
         "rank": null
     }
 ]
