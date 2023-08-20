@@ -270,5 +270,13 @@
         "source_type": "blog",
         "url": "https://intrusiontruth.wordpress.com/feed",
         "rank": null
+    },
+    {
+        "id": "eb766f30-5fc6-4faa-971e-dbe60d0e5d3b",
+        "created_at": "2023-08-20T07:34:13.518817+00:00",
+        "source_name": "KrebsOnSecurity",
+        "source_type": "blog",
+        "url": "https://krebsonsecurity.com/feed/",
+        "rank": null
     }
 ]
