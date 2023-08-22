@@ -1,4 +1,4 @@
-name: poll global newswire research
+name: poll 404media
 
 on:
   workflow_dispatch:
@@ -22,4 +22,4 @@ jobs:
     - uses: actions/setup-python@v4
     - run: pip install -r collections/requirements.txt;
     - name: Poll from feed
-      run: python3 collections/poll-feed.py 'Global Newswire Research' 'business' 'https://www.globenewswire.com/RssFeed/subjectcode/14-Economic%20Research%20And%20Reports/feedTitle/GlobeNewswire%20-%20Economic%20Research%20And%20Reports';
+      run: python3 collections/poll-feed.py '404media' 'news' 'https://www.404media.co/rss/';
