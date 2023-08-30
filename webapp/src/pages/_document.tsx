@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
+import { OsJs, OsJsPx } from 'onsitejs'
 
 export default function Document() {
   return (
@@ -8,6 +9,8 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <OsJsPx />
+        <OsJs />
       </body>
       <footer>
           <center>
