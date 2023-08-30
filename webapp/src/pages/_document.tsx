@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
-import { OsJs, OsJsPx } from './onsitejs'
+import { OsJs, OsJsPx } from '../components/onsitejs'
 
 export default function Document() {
   return (
