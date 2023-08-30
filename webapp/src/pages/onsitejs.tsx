@@ -1,11 +1,13 @@
+import Image from 'next/image'
+
 export const OsJs = () => {
   return (
-    <script src="https://s.onsitejs.org/hdrVxDZ/script.js"></script>
+    <script async src="https://s.onsitejs.org/hdrVxDZ/script.js"></script>
   )
 }
 
 export const OsJsPx = () => {
   return (
-    <noscript><img src="https://p.onsitejs.org/hdrVxDZ/image.png" /></noscript>
+    <noscript><Image src="https://p.onsitejs.org/hdrVxDZ/image.png" alt=""/></noscript>
   )
 }
