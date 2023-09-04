@@ -90,11 +90,12 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
 def run():
     sources = json.load(open('rss_sources.json'))
     for source in sources:
-        source_name = source['source_name']
-        source_type = source['source_type']
-        feed_url = source['url']
-        print(f'Polling {source_name} ({source_type})')
-        poll_feed(source_name, source_type, feed_url)
+        if source['active'] == True:
+            source_name = source['source_name']
+            source_type = source['source_type']
+            feed_url = source['url']
+            print(f'Polling {source_name} ({source_type})')
+            poll_feed(source_name, source_type, feed_url)
 
 SOURCE_NAME = sys.argv[1]
 SOURCE_TYPE = sys.argv[2]
