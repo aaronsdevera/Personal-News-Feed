@@ -35,7 +35,7 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
         payload.update({'created_at': datetime.datetime.utcnow().isoformat()})
     
     r = requests.post(
-        DATA_SINK_URL,
+        f'{DATA_SINK_URL}/index/newsfeed-headlines',
         json=payload,
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
