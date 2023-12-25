@@ -3,14 +3,17 @@ name: poll the economist - china
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '*/5 * * * *'
+    - cron:  '*/10 * * * *'
   push:
     branches:
       - main
 
 env:
   DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
-  DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
+  AUTH_HEADER_ONE_KEY: ${{ secrets.AUTH_HEADER_ONE_KEY }} 
+  AUTH_HEADER_ONE_VALUE: ${{ secrets.AUTH_HEADER_ONE_VALUE }} 
+  AUTH_HEADER_TWO_VALUE: ${{ secrets.AUTH_HEADER_TWO_VALUE }} 
+  AUTH_HEADER_TWO_KEY: ${{ secrets.AUTH_HEADER_TWO_KEY }} 
 
 jobs:
   build:

@@ -10,7 +10,10 @@ jobs:
     environment: production
     env:
       DATA_SINK_URL: ${{ secrets.DATA_SINK_URL }}
-      DATA_SINK_API_KEY: ${{ secrets.DATA_SINK_API_KEY }}
+      AUTH_HEADER_ONE_KEY: ${{ secrets.AUTH_HEADER_ONE_KEY }} 
+      AUTH_HEADER_ONE_VALUE: ${{ secrets.AUTH_HEADER_ONE_VALUE }} 
+      AUTH_HEADER_TWO_VALUE: ${{ secrets.AUTH_HEADER_TWO_VALUE }} 
+      AUTH_HEADER_TWO_KEY: ${{ secrets.AUTH_HEADER_TWO_KEY }} 
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
