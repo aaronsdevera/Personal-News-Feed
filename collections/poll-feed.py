@@ -6,9 +6,13 @@ import requests
 import hashlib
 import dateutil
 import pandas as pd
+import datetime
 
 DATA_SINK_URL = os.environ.get('DATA_SINK_URL')
-DATA_SINK_API_KEY = os.environ.get('DATA_SINK_API_KEY')
+AUTH_HEADER_ONE_KEY = os.environ.get('AUTH_HEADER_ONE_KEY')
+AUTH_HEADER_ONE_VALUE = os.environ.get('AUTH_HEADER_ONE_VALUE')
+AUTH_HEADER_TWO_KEY = os.environ.get('AUTH_HEADER_TWO_KEY')
+AUTH_HEADER_TWO_VALUE = os.environ.get('AUTH_HEADER_TWO_VALUE')
 
 # function to take sha256 hash of a string
 def sha256_hash(string: str):
@@ -27,18 +31,21 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
     }
     if created_at:
         payload.update({'created_at': created_at})
+    else:
+        payload.update({'created_at': datetime.datetime.utcnow().isoformat()})
     
     r = requests.post(
         DATA_SINK_URL,
         json=payload,
         headers={
-            'apikey': DATA_SINK_API_KEY,
-            'authorization': f'Bearer {DATA_SINK_API_KEY}'
+            AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
+            AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
         }
     )
     return r
 
 def check_url(url: str, headline: str):
+    '''
     url_sha256 = sha256_hash(url)
     # headline_sha256 = sha256_hash(headline)
     # original
@@ -46,8 +53,8 @@ def check_url(url: str, headline: str):
     #
     r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&select=*',
         headers={
-            'apikey': DATA_SINK_API_KEY,
-            'authorization': f'Bearer {DATA_SINK_API_KEY}'
+            AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
+            AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
         }
     )
     data = r.json()
@@ -55,6 +62,8 @@ def check_url(url: str, headline: str):
         return True
     else:
         return False
+    '''
+    return False
 
 def poll_feed(source_name: str, source_type: str, feed_url: str):
     feed = feedparser.parse(feed_url)
