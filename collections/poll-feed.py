@@ -45,25 +45,24 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
     return r
 
 def check_url(url: str, headline: str):
-    '''
+    
     url_sha256 = sha256_hash(url)
-    # headline_sha256 = sha256_hash(headline)
-    # original
-    #r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&headline_sha256=eq.{headline_sha256}&select=*',
-    #
-    r = requests.get(f'{DATA_SINK_URL}?url_sha256=eq.{url_sha256}&select=*',
+    headline_sha256 = sha256_hash(headline)
+    
+    r = requests.post(f'{DATA_SINK_URL}/search/newsfeed-headlines',
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
             AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
+        },
+        json={
+            'query':f'NOT url_sha256:"{url_sha256}" AND NOT headline_sha256:"{headline_sha256}"'
         }
     )
     data = r.json()
-    if len(data) > 0:
+    if len(data['hits']['hits']) > 0:
         return True
     else:
         return False
-    '''
-    return False
 
 def poll_feed(source_name: str, source_type: str, feed_url: str):
     feed = feedparser.parse(feed_url)
