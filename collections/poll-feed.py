@@ -93,7 +93,7 @@ if __name__ == '__main__':
             feed_url = source['url']
 
             for record in produce_feed(source_name, source_type, feed_url):
-                if check_url(record['url'], record['headline']):
+                if not check_url(record['url'], record['headline']):
                     sink_data(
                         record
                     )
