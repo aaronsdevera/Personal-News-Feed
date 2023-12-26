@@ -687,7 +687,7 @@ export default {
               {
                   status: 200,
                   headers: {
-                      'content-type': 'image/png',
+                      'content-type': 'image/x-icon',
                   }
               }
           );
