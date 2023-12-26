@@ -48,11 +48,16 @@ def check_url(url_sha256: str, headline_sha256: str):
             }
         }
     )
-    data = r.json()
+    
     try:
-        if data['hits']['total']['value'] > 0:
-            return True
-        else:
+        data = r.json()
+        try:
+            if data['hits']['total']['value'] > 0:
+                return True
+            else:
+                return False
+        except:
+            print(f'[!] bad response from search: {r.text}')
             return False
     except:
         print('[!] error checking url.')
