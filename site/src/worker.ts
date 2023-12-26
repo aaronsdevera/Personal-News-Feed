@@ -679,6 +679,6 @@ export default {
             );
         }
 
-        return new Response(return_html_index(''),{status: 200});
+        return new Response(null,{status: 200});
 	},
 };
