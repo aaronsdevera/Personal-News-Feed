@@ -8,18 +8,24 @@ import dateutil
 import pandas as pd
 import datetime
 
+'''
 DATA_SINK_URL = os.environ.get('DATA_SINK_URL')
 AUTH_HEADER_ONE_KEY = os.environ.get('AUTH_HEADER_ONE_KEY')
 AUTH_HEADER_ONE_VALUE = os.environ.get('AUTH_HEADER_ONE_VALUE')
 AUTH_HEADER_TWO_KEY = os.environ.get('AUTH_HEADER_TWO_KEY')
 AUTH_HEADER_TWO_VALUE = os.environ.get('AUTH_HEADER_TWO_VALUE')
+'''
+DATA_SINK_URL = 'https://api.doompile.org'
+AUTH_HEADER_ONE_KEY = 'CF-Access-Client-Id'
+AUTH_HEADER_ONE_VALUE = os.environ.get('DOOMPILE_API_ID')
+AUTH_HEADER_TWO_KEY = 'CF-Access-Client-Secret'
+AUTH_HEADER_TWO_VALUE = os.environ.get('DOOMPILE_API_KEY')
 
 # function to take sha256 hash of a string
 def sha256_hash(string: str):
     return hashlib.sha256(string.encode()).hexdigest()
 
 def sink_data(data: dict):
-    print('[+] <method called> line 32: sink_data')
     r = requests.post(
         f'{DATA_SINK_URL}/index/newsfeed-headlines',
         json=data,
@@ -31,7 +37,6 @@ def sink_data(data: dict):
     return r
 
 def check_url(url_sha256: str, headline_sha256: str):
-    print('[+] <method called> line 34: check_url')
     r = requests.post(f'{DATA_SINK_URL}/search/newsfeed-headlines',
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
@@ -41,15 +46,14 @@ def check_url(url_sha256: str, headline_sha256: str):
             'query':f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
         }
     )
-    print(f'[+] <response> line 44: {r.status_code}')
     data = r.json()
-    if len(data['hits']['hits']) > 0:
+    print(data)
+    if data['hits']['total']['value'] > 0:
         return True
     else:
         return False
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
-    print('[+] <method called> line 52: produce_feed')
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
         headline = None
@@ -85,13 +89,18 @@ if __name__ == '__main__':
     sources = json.load(open(INFILE))
     for source in sources:
         if source['active'] == True:
+            print('Processing source: ' + source['source_name'] + ' [' + source['source_type'] + ']')
             source_name = source['source_name']
             source_type = source['source_type']
             feed_url = source['url']
 
             for record in produce_feed(source_name, source_type, feed_url):
+                print(f'[!] checking record: {record["headline"]}\t{record["url_sha256"]}')
                 if not check_url(record['url_sha256'], record['headline_sha256']):
+                    
                     r = sink_data(
                         record
                     )
-                    print(f'[+] <sink_data response> line 96: {r.status_code}')
+                    print(r.json())
+                else:
+                    print('[!] record already exists')
