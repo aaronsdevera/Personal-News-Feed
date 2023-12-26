@@ -3,43 +3,63 @@ import json
 import requests
 import pandas as pd
 
-NEWSFEED_URL = os.environ.get("NEWSFEED_URL")
-NEWSFEED_KEY = os.environ.get("NEWSFEED_KEY")
+DOOMPILE_API_URL = os.environ.get("DOOMPILE_API_URL")
+DOOMPILE_API_ID = os.environ.get("DOOMPILE_API_ID")
+DOOMPILE_API_KEY = os.environ.get("DOOMPILE_API_KEY")
+
+def run_sql(query: str):
+    HEADERS = {
+        'CF-Access-Client-Id': f'{DOOMPILE_API_ID}',
+        'CF-Access-Client-Secret': f'{DOOMPILE_API_KEY}'
+    }
+    BODY = {
+        'query': f'{query}'
+    }
+    r = requests.post(f'{DOOMPILE_API_URL}/sql',
+        headers=HEADERS,
+        json=BODY
+    )
+    return r
+
+def run_search(query: str):
+    HEADERS = {
+        'CF-Access-Client-Id': f'{DOOMPILE_API_ID}',
+        'CF-Access-Client-Secret': f'{DOOMPILE_API_KEY}'
+    }
+    BODY = {
+        'query': f'{query}'
+    }
+    r = requests.post(f'{DOOMPILE_API_URL}/search/newsfeed-headlines',
+        headers=HEADERS,
+        json=BODY
+    )
+    return r
 
 def get_records_by_url_sha256(url_sha256: str):
-    HEADERS = {
-        'apikey': NEWSFEED_KEY,
-        'Authorization': f'Bearer {NEWSFEED_KEY}',
-        'Content-Type': 'application/json'
-    }
-    r = requests.get(f'{NEWSFEED_URL}/rest/v1/headlines?url_sha256=eq.{url_sha256}&select=*&',
-        headers=HEADERS
-    )
-    return r.json()
+    #results = run_sql(f'select * from "newsfeed-headlines" where url_sha256 = \'{url_sha256}\'').json()
+    results = run_search(f'url_sha256:"{url_sha256}"').json()
+    return pd.json_normalize(results['hits']['hits']).to_dict('records')
 
 def delete_record_by_id(id: str):
     HEADERS = {
-        'apikey': NEWSFEED_KEY,
-        'Authorization': f'Bearer {NEWSFEED_KEY}',
-        'Content-Type': 'application/json'
+        'CF-Access-Client-Id': f'{DOOMPILE_API_ID}',
+        'CF-Access-Client-Secret': f'{DOOMPILE_API_KEY}'
     }
-    r = requests.delete(f'{NEWSFEED_URL}/rest/v1/headlines?id=eq.{id}',
+
+    r = requests.get(f'{DOOMPILE_API_URL}/delete/newsfeed-headlines/{id}',
         headers=HEADERS
     )
     return r
 
-df = pd.read_csv('hashes.csv')
+def get_duplicates():
+    results = run_sql('select url_sha256, count(*) as volume from "newsfeed-headlines" group by url_sha256 having count(*) > 1').json()
+    return pd.DataFrame(results['rows'], columns=[x['name'] for x in results['columns']]).to_dict('records')
 
-hashes = df.loc[df['volume'] > 1]
+for duplicate_hash in get_duplicates():
+    records = get_records_by_url_sha256(duplicate_hash['url_sha256'])
+    for record in records[:-1]:
+        print(f'[!] Deleting record {record["_id"]}')
+        r = delete_record_by_id(record['_id'])
+        print(f'[+] Status code: {r.status_code}')
 
-hashes = hashes.to_dict(orient='records')
-
-for each in hashes:
-    hash = each['url_sha256']
-    records = get_records_by_url_sha256(hash)
-    record_ids = [record['id'] for record in records]
-    # KEEP THE EARLIEST RECORD AND MARK THE OTHERS FOR DELETION
-    record_ids_to_delete = record_ids[1:]
-    for record_id in record_ids_to_delete:
-        d = delete_record_by_id(record_id)
-        print(f'[!] Deletion of record {record_id}: status {d.status_code}')
+print(get_duplicates())
