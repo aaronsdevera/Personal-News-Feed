@@ -30,12 +30,8 @@ def sink_data(data: dict):
     )
     return r
 
-def check_url(url: str, headline: str):
-    print('[+] <method called> line 50: check_url')
-    url_sha256 = sha256_hash(url)
-    headline_sha256 = sha256_hash(headline)
-    
-    print('[+] <searching elastic> line 54: request.post')
+def check_url(url_sha256: str, headline_sha256: str):
+    print('[+] <method called> line 34: check_url')
     r = requests.post(f'{DATA_SINK_URL}/search/newsfeed-headlines',
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
@@ -45,7 +41,7 @@ def check_url(url: str, headline: str):
             'query':f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
         }
     )
-    print(f'[+] <response> line 48: {r.status_code}')
+    print(f'[+] <response> line 44: {r.status_code}')
     data = r.json()
     if len(data['hits']['hits']) > 0:
         return True
@@ -53,6 +49,7 @@ def check_url(url: str, headline: str):
         return False
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
+    print('[+] <method called> line 52: produce_feed')
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
         headline = None
@@ -93,8 +90,8 @@ if __name__ == '__main__':
             feed_url = source['url']
 
             for record in produce_feed(source_name, source_type, feed_url):
-                if not check_url(record['url'], record['headline']):
+                if not check_url(record['url_sha256'], record['headline_sha256']):
                     r = sink_data(
                         record
                     )
-                    print(f'[+] <sink_data response> line 100: {r.status_code}')
+                    print(f'[+] <sink_data response> line 96: {r.status_code}')
