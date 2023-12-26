@@ -49,10 +49,13 @@ def check_url(url_sha256: str, headline_sha256: str):
         }
     )
     data = r.json()
-    #print(data)
-    if data['hits']['total']['value'] > 0:
-        return True
-    else:
+    try:
+        if data['hits']['total']['value'] > 0:
+            return True
+        else:
+            return False
+    except:
+        print('[!] error checking url.')
         return False
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
