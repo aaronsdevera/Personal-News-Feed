@@ -681,7 +681,7 @@ export default {
             );
         }
 
-        if (path.startswith('/favicon.ico')) {
+        if (path.startsWith('/favicon.ico')) {
           return new Response(
               atob(favicon_ico),
               {
