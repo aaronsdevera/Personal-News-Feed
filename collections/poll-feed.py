@@ -7,23 +7,21 @@ import hashlib
 import dateutil
 import pandas as pd
 import datetime
+import uuid
 
-'''
 DATA_SINK_URL = os.environ.get('DATA_SINK_URL')
 AUTH_HEADER_ONE_KEY = os.environ.get('AUTH_HEADER_ONE_KEY')
 AUTH_HEADER_ONE_VALUE = os.environ.get('AUTH_HEADER_ONE_VALUE')
 AUTH_HEADER_TWO_KEY = os.environ.get('AUTH_HEADER_TWO_KEY')
 AUTH_HEADER_TWO_VALUE = os.environ.get('AUTH_HEADER_TWO_VALUE')
-'''
-DATA_SINK_URL = 'https://api.doompile.org'
-AUTH_HEADER_ONE_KEY = 'CF-Access-Client-Id'
-AUTH_HEADER_ONE_VALUE = os.environ.get('DOOMPILE_API_ID')
-AUTH_HEADER_TWO_KEY = 'CF-Access-Client-Secret'
-AUTH_HEADER_TWO_VALUE = os.environ.get('DOOMPILE_API_KEY')
 
 # function to take sha256 hash of a string
 def sha256_hash(string: str):
     return hashlib.sha256(string.encode()).hexdigest()
+
+# function to generate uuid
+def generate_uuid():
+    return str(uuid.uuid4())
 
 def sink_data(data: dict):
     r = requests.post(
@@ -54,6 +52,7 @@ def check_url(url_sha256: str, headline_sha256: str):
         return False
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
+    poll_id = generate_uuid()
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
         headline = None
@@ -73,6 +72,7 @@ def produce_feed(source_name: str, source_type: str, feed_url: str):
         except:
             pass
         yield {
+            'poll_id': poll_id,
             'source_name': source_name,
             'source_name_sha256': sha256_hash(source_name),
             'source_type': source_type,
