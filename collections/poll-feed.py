@@ -94,6 +94,7 @@ if __name__ == '__main__':
 
             for record in produce_feed(source_name, source_type, feed_url):
                 if not check_url(record['url'], record['headline']):
-                    sink_data(
+                    r = sink_data(
                         record
                     )
+                    print(f'[+] <sink_data response> line 100: {r.status_code}')
