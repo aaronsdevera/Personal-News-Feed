@@ -682,15 +682,12 @@ export default {
         }
 
         if (path.startsWith('/favicon.ico')) {
-          return new Response(
-              atob(favicon_ico),
-              {
-                  status: 200,
-                  headers: {
-                      'content-type': 'image/x-icon',
-                  }
-              }
-          );
+          return new Response(Uint8Array.from(atob(favicon_ico), c => c.charCodeAt(0)), {
+            status: 200,
+            headers: {
+              "Content-Type": "image/x-icon"
+            }
+        })
       }
 
         return new Response(null,{status: 200});
