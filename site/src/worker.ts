@@ -474,7 +474,7 @@ function return_html_index(headlines_ul: string): string {
     <script>const headlines=${headlines_ul}</script>
     <script>
     headlines.map((entry) => (
-        document.getElementById('feed-ul').innerHTML += '<li class=feed-item key=' + entry.id + '><a class="feed-item-headline" href="' + entry.url + '">' + entry.headline + '</a><span class="feed-tag feed-item-sourcename">' + entry.source_name + '</span><span class="feed-tag feed-item-sourcetype">' + entry.source_type + '</span><span class="feed-tag feed-item-createdat light-mode-text">' + entry.created_at + '</span></li>'
+        document.getElementById('feed-ul').innerHTML += '<li class=feed-item key=' + entry.id + '><a class="feed-item-headline" href="' + entry.url + '">' + entry.headline.replace("â€™","'") + '</a><span class="feed-tag feed-item-sourcename">' + entry.source_name + '</span><span class="feed-tag feed-item-sourcetype">' + entry.source_type + '</span><span class="feed-tag feed-item-createdat light-mode-text">' + entry.created_at + '</span></li>'
     ));
     let MODE=0;document.getElementById("insert-time").innerHTML = new Date().toISOString();
     
@@ -615,14 +615,15 @@ function gen_dt_from_ts(ts: any): Date {
     return new Date(ts*1000);
 }
 
-async function search(env: Env, auth_headers: Object, query: string = '*', size: number = 250): Promise<any> {
+async function search(env: Env, auth_headers: Object, query: string = '*', size: number = 500): Promise<any> {
     const url = `${env.DATA_SINK_URL}/search/newsfeed-headlines`;
     const resp = await fetch(url, {
         method: 'POST',
         headers: auth_headers,
         body: JSON.stringify({
             sort: [
-                { "created_at" : {"order" : "desc", "format": "date"}}
+                { "created_at" : {"order" : "desc", "format": "date"}},
+                { "ingested_at" : {"order" : "desc", "format": "date"}}
             ],
             query: {
                 query_string: {
