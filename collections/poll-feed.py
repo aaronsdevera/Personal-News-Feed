@@ -42,7 +42,7 @@ def check_url(url: str, headline: str):
             AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
         },
         json={
-            'query':f'NOT url_sha256:"{url_sha256}" AND NOT headline_sha256:"{headline_sha256}"'
+            'query':f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
         }
     )
     data = r.json()
@@ -50,40 +50,7 @@ def check_url(url: str, headline: str):
         return True
     else:
         return False
-
-def poll_feed(source_name: str, source_type: str, feed_url: str):
-    print('[+] <method called> line 71: poll_feed')
-    feed = feedparser.parse(feed_url)
-    for entry in feed.entries:
-        headline = None
-        try:
-            headline = entry.title
-        except:
-            pass
-        url = None
-        try:
-            url = entry.link
-        except:
-            pass
-        created_at = None
-        try:
-            created_at = entry.published
-            created_at = dateutil.parser.parse(created_at).isoformat()
-        except:
-            pass
-        if not check_url(url,headline):
-            print('[+] <logic continues> line 71: check_url')
-            if source_name and source_type and headline and url:
-                r = sink_data(
-                    source_name=source_name,
-                    source_type=source_type,
-                    headline=headline,
-                    url=url,
-                    created_at=created_at
-                )
-                if r.status_code not in (201,200):
-                    print(f'Error: {r.status_code} {r.text}')
-
+    
 def produce_feed(source_name: str, source_type: str, feed_url: str):
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
