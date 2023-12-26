@@ -84,6 +84,7 @@ def produce_feed(source_name: str, source_type: str, feed_url: str):
         except:
             pass
         yield {
+            'created_at': created_at,
             'poll_id': poll_id,
             'source_name': source_name,
             'source_name_sha256': sha256_hash(source_name),
