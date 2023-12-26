@@ -113,6 +113,6 @@ if __name__ == '__main__':
                     r = sink_data(
                         record
                     )
-                    print(r.json())
+                    print(r.text)
                 else:
                     print('[!] record already exists')
