@@ -43,7 +43,7 @@ def check_url(url_sha256: str, headline_sha256: str):
         json={
             'query': {
                 'query_string': {
-                    'query' f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
+                    'query': f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
                 }
             }
         }
