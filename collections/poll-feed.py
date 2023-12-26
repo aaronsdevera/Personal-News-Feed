@@ -18,27 +18,11 @@ AUTH_HEADER_TWO_VALUE = os.environ.get('AUTH_HEADER_TWO_VALUE')
 def sha256_hash(string: str):
     return hashlib.sha256(string.encode()).hexdigest()
 
-def sink_data(source_name: str, source_type: str, headline: str, url: str, created_at: str = None):
-    print('[+] <method called> line 22: sink_data')
-    payload = {
-        'source_name': source_name,
-        'source_name_sha256': sha256_hash(source_name),
-        'source_type': source_type,
-        'source_type_sha256': sha256_hash(source_type),
-        'headline': headline,
-        'headline_sha256': sha256_hash(headline),
-        'url': url,
-        'url_sha256': sha256_hash(url)
-    }
-    if created_at:
-        payload.update({'created_at': created_at})
-    else:
-        payload.update({'created_at': datetime.datetime.utcnow().isoformat()})
-    
-    print('[+] <sending data> line 38: requests.post')
+def sink_data(data: dict):
+    print('[+] <method called> line 32: sink_data')
     r = requests.post(
         f'{DATA_SINK_URL}/index/newsfeed-headlines',
-        json=payload,
+        json=data,
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
             AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
@@ -100,20 +84,48 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
                 if r.status_code not in (201,200):
                     print(f'Error: {r.status_code} {r.text}')
 
-def run():
-    sources = json.load(open('rss_sources.json'))
+def produce_feed(source_name: str, source_type: str, feed_url: str):
+    feed = feedparser.parse(feed_url)
+    for entry in feed.entries:
+        headline = None
+        try:
+            headline = entry.title
+        except:
+            pass
+        url = None
+        try:
+            url = entry.link
+        except:
+            pass
+        created_at = None
+        try:
+            created_at = entry.published
+            created_at = dateutil.parser.parse(created_at).isoformat()
+        except:
+            pass
+        yield {
+            'source_name': source_name,
+            'source_name_sha256': sha256_hash(source_name),
+            'source_type': source_type,
+            'source_type_sha256': sha256_hash(source_type),
+            'headline': headline,
+            'headline_sha256': sha256_hash(headline),
+            'url': url,
+            'url_sha256': sha256_hash(url)
+        }
+            
+INFILE  = sys.argv[1]
+            
+if __name__ == '__main__':
+    sources = json.load(open(INFILE))
     for source in sources:
         if source['active'] == True:
             source_name = source['source_name']
             source_type = source['source_type']
             feed_url = source['url']
-            print(f'Polling {source_name} ({source_type})')
-            poll_feed(source_name, source_type, feed_url)
 
-SOURCE_NAME = sys.argv[1]
-SOURCE_TYPE = sys.argv[2]
-FEED_URL = sys.argv[3]
-
-print(f'Polling {SOURCE_NAME} ({SOURCE_TYPE})')
-poll_feed(SOURCE_NAME, SOURCE_TYPE, FEED_URL)
-
+            for record in produce_feed(source_name, source_type, feed_url):
+                if check_url(record['url'], record['headline']):
+                    sink_data(
+                        record
+                    )
