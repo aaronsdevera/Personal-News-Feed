@@ -49,7 +49,7 @@ def check_url(url_sha256: str, headline_sha256: str):
         }
     )
     data = r.json()
-    print(data)
+    #print(data)
     if data['hits']['total']['value'] > 0:
         return True
     else:
