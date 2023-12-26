@@ -45,6 +45,7 @@ def check_url(url: str, headline: str):
             'query':f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
         }
     )
+    print(f'[+] <response> line 48: {r.status_code}')
     data = r.json()
     if len(data['hits']['hits']) > 0:
         return True
