@@ -41,7 +41,11 @@ def check_url(url_sha256: str, headline_sha256: str):
             AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
         },
         json={
-            'query':f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
+            'query': {
+                'query_string': {
+                    'query' f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
+                }
+            }
         }
     )
     data = r.json()
