@@ -19,6 +19,7 @@ def sha256_hash(string: str):
     return hashlib.sha256(string.encode()).hexdigest()
 
 def sink_data(source_name: str, source_type: str, headline: str, url: str, created_at: str = None):
+    print('[+] <method called> line 22: sink_data')
     payload = {
         'source_name': source_name,
         'source_name_sha256': sha256_hash(source_name),
@@ -34,6 +35,7 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
     else:
         payload.update({'created_at': datetime.datetime.utcnow().isoformat()})
     
+    print('[+] <sending data> line 38: requests.post')
     r = requests.post(
         f'{DATA_SINK_URL}/index/newsfeed-headlines',
         json=payload,
@@ -45,10 +47,11 @@ def sink_data(source_name: str, source_type: str, headline: str, url: str, creat
     return r
 
 def check_url(url: str, headline: str):
-    
+    print('[+] <method called> line 50: check_url')
     url_sha256 = sha256_hash(url)
     headline_sha256 = sha256_hash(headline)
     
+    print('[+] <searching elastic> line 54: request.post')
     r = requests.post(f'{DATA_SINK_URL}/search/newsfeed-headlines',
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
@@ -65,6 +68,7 @@ def check_url(url: str, headline: str):
         return False
 
 def poll_feed(source_name: str, source_type: str, feed_url: str):
+    print('[+] <method called> line 71: poll_feed')
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
         headline = None
@@ -84,6 +88,7 @@ def poll_feed(source_name: str, source_type: str, feed_url: str):
         except:
             pass
         if not check_url(url,headline):
+            print('[+] <logic continues> line 71: check_url')
             if source_name and source_type and headline and url:
                 r = sink_data(
                     source_name=source_name,
