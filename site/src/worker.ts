@@ -4,8 +4,8 @@ function return_html_index(headlines_ul: string): string {
     <title>Newsfeed | aaronsdevera.com</title>
     <meta name="description" content="Personal news feed curated from several sources." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
-
     <style>
         :root {
         --max-width: 1100px;
