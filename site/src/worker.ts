@@ -574,6 +574,7 @@ document.getElementById('site-tag-input').addEventListener('keyup', (event) => {
 document.getElementById('insert-mode').addEventListener('click', (event) => {MODE = switchMode(MODE);});
 </script>
 <noscript><img src="https://s.onsitejs.org/hdrVxDZ/image.gif" style="display:none;"/></noscript><script src="https://s.onsitejs.org/hdrVxDZ/script.js"></script>
+<footer><center><a href="https://web.archive.org/web/20230313014147/https://github.com/aaronsdevera/Personal-News-Feed">(haphazardly) designed by Aaron DeVera. GNU-AGPLv3</a></center></footer>
 </body>
 </html>`
 }
