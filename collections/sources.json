@@ -511,5 +511,14 @@
     "source_name": "404media",
     "source_type": "news",
     "url": "https://www.404media.co/rss/"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-08T16:15:40.319Z",
+    "id": "1f821b2c-5c31-4ca4-9ca6-8dfeffafa29e",
+    "rank": 58,
+    "source_name": "GM NYC",
+    "source_type": "events",
+    "url": "https://www.gmnyc.com/feed"
   }
 ]
