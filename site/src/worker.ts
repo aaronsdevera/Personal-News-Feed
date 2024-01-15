@@ -640,6 +640,7 @@ async function search(env: Env, auth_headers: Object, query: string = '*', size:
     });
     
     const json = await resp.json();
+    console.log('line 643')
     return json;
 }
 
