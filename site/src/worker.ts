@@ -638,7 +638,7 @@ async function search(env: Env, auth_headers: Object, query: string = '*', size:
         headers: auth_headers,
         body: JSON.stringify(body)
     });
-    
+    console.log('line 641')
     const json = await resp.json();
     console.log('line 643')
     return json;
@@ -675,7 +675,7 @@ export default {
 
         if (path === '/') {
             const headlines = await get_headlines(env, auth_headers);
-            
+            console.log('line 678')
             return new Response(
                 return_html_index(JSON.stringify(headlines)),
                 {
