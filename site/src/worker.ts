@@ -639,6 +639,7 @@ async function search(env: Env, auth_headers: Object, query: string = '*', size:
         body: JSON.stringify(body)
     });
     console.log('line 641')
+    console.log(resp.text())
     const json = await resp.json();
     console.log('line 643')
     return json;
