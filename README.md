@@ -26,9 +26,9 @@ You can view a full list of sources [here in the repo](./collections/sources.jso
 - [GitHub Actions](https://github.com/features/actions)
 
 **Running site in dev mode**
-while in the [`site`](site) directory:
+while in the [`site`](site) directory, and assuming you have a `.dev.vars` file with the correct values:
 ```
-wrangler dev
+wrangler dev --live-reload
 ```
 
 **Deployment**

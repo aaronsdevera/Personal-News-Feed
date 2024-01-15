@@ -619,22 +619,26 @@ function gen_dt_from_ts(ts: any): Date {
 
 async function search(env: Env, auth_headers: Object, query: string = '*', size: number = 500): Promise<any> {
     const url = `${env.DATA_SINK_URL}/search/newsfeed-headlines`;
+    
+    const body = {
+        sort: [
+            { "created_at" : {"order" : "desc", "format": "date"}},
+            { "ingested_at" : {"order" : "desc", "format": "date"}}
+        ],
+        query: {
+            query_string: {
+                query: query
+            }
+        },
+        size: size
+    }
+    
     const resp = await fetch(url, {
         method: 'POST',
         headers: auth_headers,
-        body: JSON.stringify({
-            sort: [
-                { "created_at" : {"order" : "desc", "format": "date"}},
-                { "ingested_at" : {"order" : "desc", "format": "date"}}
-            ],
-            query: {
-                query_string: {
-                    query: query
-                }
-            },
-            size: size
-        })
+        body: JSON.stringify(body)
     });
+    
     const json = await resp.json();
     return json;
 }
@@ -663,13 +667,14 @@ export default {
         const url = new URL(request.url);
         const path = url.pathname;
 
+
         let auth_headers = {};
         auth_headers[env.AUTH_HEADER_ONE_KEY] = env.AUTH_HEADER_ONE_VALUE;
         auth_headers[env.AUTH_HEADER_TWO_KEY] = env.AUTH_HEADER_TWO_VALUE;
 
-
         if (path === '/') {
             const headlines = await get_headlines(env, auth_headers);
+            
             return new Response(
                 return_html_index(JSON.stringify(headlines)),
                 {
