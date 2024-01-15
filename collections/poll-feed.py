@@ -26,42 +26,57 @@ def generate_uuid():
 def sink_data(data: dict):
     r = requests.post(
         f'{DATA_SINK_URL}/index/newsfeed-headlines',
-        json=data,
+        data=json.dumps(data),
         headers={
             AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
-            AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
+            AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE,
+            'Content-Type': 'application/json'
         }
     )
     return r
 
 def check_url(url_sha256: str, headline_sha256: str):
-    r = requests.post(f'{DATA_SINK_URL}/search/newsfeed-headlines',
-        headers={
-            AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
-            AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
-        },
-        json={
-            'query': {
-                'query_string': {
-                    'query': f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
-                }
+    
+    query_string = f'url_sha256:"{url_sha256}" OR headline_sha256:"{headline_sha256}"'
+    
+    body = {
+        'query': {
+            'query_string': {
+                'query': query_string
             }
         }
-    )
+    }
+
+    headers = {
+        AUTH_HEADER_ONE_KEY: AUTH_HEADER_ONE_VALUE,
+        AUTH_HEADER_TWO_KEY: AUTH_HEADER_TWO_VALUE
+    }
+    
+    target_url = f'{DATA_SINK_URL}/search/newsfeed-headlines'
     
     try:
-        data = r.json()
+        r = requests.post(target_url,
+            headers=headers,
+            json=body
+        )
+        
         try:
-            if data['hits']['total']['value'] > 0:
-                return True
-            else:
-                return False
-        except:
-            print(f'[!] bad response from search: {r.text}')
-            return False
-    except:
-        print('[!] error checking url.')
-        return False
+            data = r.json()
+            try:
+                if data['hits']['total']['value'] > 0:
+                    return True
+                else:
+                    return False
+            except Exception as e:
+                print(f'[!] bad response from search: {r.text}')
+                pass
+        except Exception as e:
+            print(f'[!] error checking url: {e}')
+            pass
+    
+    except Exception as e:
+        print(f'[!] error making request to data sink url: {e}')
+        pass
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
     poll_id = generate_uuid()
@@ -110,10 +125,9 @@ if __name__ == '__main__':
             for record in produce_feed(source_name, source_type, feed_url):
                 print(f'[!] checking record: {record["headline"]}\t{record["url_sha256"]}')
                 if not check_url(record['url_sha256'], record['headline_sha256']):
-                    
+                    print(json.dumps(record))
                     r = sink_data(
                         record
                     )
-                    print(r.text)
                 else:
                     print('[!] record already exists')
