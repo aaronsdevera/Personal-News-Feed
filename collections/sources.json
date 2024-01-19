@@ -515,10 +515,19 @@
   {
     "active": true,
     "created_at": "2024-01-08T16:15:40.319Z",
-    "id": "1f821b2c-5c31-4ca4-9ca6-8dfeffafa29e",
+    "id": "1d345acd9-0c22-4d07-9ae4-c0de4e9161ee",
     "rank": 58,
     "source_name": "GM NYC",
     "source_type": "events",
     "url": "https://www.gmnyc.com/feed"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-19T03:02:00.001Z",
+    "id": "1f487e0c8-c78f-4b3c-a4c8-5a976a3f7bdb",
+    "rank": 59,
+    "source_name": "CTL ALT DEL Blog",
+    "source_type": "blog",
+    "url": "https://controlaltdelete.technology/rss/feed.rss"
   }
 ]
