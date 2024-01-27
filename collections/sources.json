@@ -529,5 +529,14 @@
     "source_name": "CTL ALT DEL Blog",
     "source_type": "blog",
     "url": "https://controlaltdelete.technology/rss/feed.rss"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-27T11:37:00.001Z",
+    "id": "0e921678-b8cc-40be-b82f-072a866406d6",
+    "rank": 60,
+    "source_name": "Hardcore Software",
+    "source_type": "blog",
+    "url": "https://hardcoresoftware.learningbyshipping.com/feed.rss"
   }
 ]
