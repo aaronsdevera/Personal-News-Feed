@@ -660,7 +660,7 @@ async function sql(env: Env, auth_headers: Object, query: string = '', size: num
   
   
   const json = await resp.json();
-  console.log(json)
+  
   return json;
 }
 
