@@ -648,9 +648,9 @@ async function search(env: Env, auth_headers: Object, query: string = '*', size:
 
 
 async function sql(env: Env, auth_headers: Object, query: string = '', size: number = 500): Promise<any> {
-  const url = `${env.DATA_SINK_URL}/search/newsfeed-headlines`;
+  const url = `${env.DATA_SINK_URL}/sql`;
   
-  const body = {query}
+  const body = {query: query}
   
   const resp = await fetch(url, {
       method: 'POST',
@@ -660,20 +660,20 @@ async function sql(env: Env, auth_headers: Object, query: string = '', size: num
   
   
   const json = await resp.json();
-  
+  console.log(json)
   return json;
 }
 
-async function get_headlines(env: Env, auth_headers: Object, source_name: string = '', source_type: string = '', size: number = 250): Promise<Array> {
+async function get_headlines(env: Env, auth_headers: Object, source_name: string = '', source_type: string = '', size: number = 250, hours: number = 24): Promise<Array> {
     let resp: Promise<any>;
     if (source_name !== '' && source_type === '') {
-        resp = await search(env, auth_headers, `source_name:"${source_name}"`, 100);
+        resp = await search(env, auth_headers, `(created_at:>now-${hours}h) AND source_name:"${source_name}"`, size/2);
     }
     else if (source_name === '' && source_type !== '') {
-        resp = await search(env, auth_headers, `source_type:"${source_type}"`, 200);
+        resp = await search(env, auth_headers, `(created_at:>now-${hours}h) AND source_type:"${source_type}"`, size-50);
     }
     else {
-        resp = await search(env, auth_headers, '*', size);
+        resp = await search(env, auth_headers, `(created_at:>now-${hours}h)`, size);
     }
     const hits = resp.hits.hits;
     const headlines = [];
@@ -683,8 +683,9 @@ async function get_headlines(env: Env, auth_headers: Object, source_name: string
     return headlines;
 }
 
-async function get_sources(env: Env, auth_headers: Object, hours: number = 250): Promise<Array> {
+async function get_sources(env: Env, auth_headers: Object, hours: number = 24): Promise<Array> {
     const resp = await sql(env, auth_headers, `select source_name, count(*) volume from "newsfeed-headlines" where created_at > now() - interval ${hours} hour group by 1 order by volume desc`);
+    
     const rows = resp.rows;
     const sources = [];
     for (const row of rows) {
@@ -703,10 +704,12 @@ export default {
         auth_headers[env.AUTH_HEADER_ONE_KEY] = env.AUTH_HEADER_ONE_VALUE;
         auth_headers[env.AUTH_HEADER_TWO_KEY] = env.AUTH_HEADER_TWO_VALUE;
 
+        const sources = await get_sources(env, auth_headers);
+        console.log(sources);
 
         if (url.searchParams.get('source_name') !== null) {
             const source_name = url.searchParams.get('source_name');
-            const headlines = await get_headlines(env, auth_headers,source_name, '');
+            const headlines = await get_headlines(env, auth_headers, source_name, '');
             return new Response(
                 return_html_index(JSON.stringify(headlines)),
                 {
