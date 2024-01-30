@@ -81,6 +81,16 @@ def check_url(url_sha256: str, headline_sha256: str):
 def produce_feed(source_name: str, source_type: str, feed_url: str):
     poll_id = generate_uuid()
     feed = feedparser.parse(feed_url)
+    if feed.status in [400,401,403,404,500]:
+        user_agents = [
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.3',
+            'WhatsApp/2.28.1'
+        ]
+        for ua in user_agents:
+            feed = feedparser.parse(feed_url, agent=ua)
+            if feed.status not in [400,401,403,404,500]:
+                break
+            
     for entry in feed.entries:
         headline = None
         try:
@@ -110,20 +120,35 @@ def produce_feed(source_name: str, source_type: str, feed_url: str):
             'url': url,
             'url_sha256': sha256_hash(url)
         }
-            
-INFILE  = sys.argv[1]
-            
+
+
 if __name__ == '__main__':
+
+    if len(sys.argv) < 2:
+        print('Usage: python3 poll-feed.py <infile>')
+        sys.exit(1)
+    
+    INFILE  = sys.argv[1]
+
+    SOURCE_ID = None
+
+    if len(sys.argv) > 2:
+        SOURCE_ID = sys.argv[2]
+
     sources = json.load(open(INFILE))
+
+    if SOURCE_ID:
+        sources = [source for source in sources if source['id'] == SOURCE_ID]
+
     for source in sources:
         if source['active'] == True:
-            print('Processing source: ' + source['source_name'] + ' [' + source['source_type'] + ']')
+            print('[+] Processing source: ' + source['source_name'] + ' [' + source['source_type'] + ']')
             source_name = source['source_name']
             source_type = source['source_type']
             feed_url = source['url']
 
             for record in produce_feed(source_name, source_type, feed_url):
-                print(f'[!] checking record: {record["headline"]}\t{record["url_sha256"]}')
+                print(f'[+] checking record: {record["headline"]}\t{record["url_sha256"]}')
                 if not check_url(record['url_sha256'], record['headline_sha256']):
                     print(json.dumps(record))
                     r = sink_data(

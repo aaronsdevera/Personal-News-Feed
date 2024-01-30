@@ -538,5 +538,41 @@
     "source_name": "Hardcore Software",
     "source_type": "blog",
     "url": "https://hardcoresoftware.learningbyshipping.com/feed.rss"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-30T11:42:00.001Z",
+    "id": "99c0664b-9a26-4457-81bc-e5029571fc84",
+    "rank": 61,
+    "source_name": "The Record",
+    "source_type": "tech",
+    "url": "https://therecord.media/feed/"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-30T12:42:00.001Z",
+    "id": "fd537f13-02e2-4ceb-b30b-0d8f5f73426d",
+    "rank": 62,
+    "source_name": "Foreign Affairs",
+    "source_type": "news",
+    "url": "https://www.foreignaffairs.com/rss.xml"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-30T12:43:00.001Z",
+    "id": "5612af23-92ee-4698-bbe3-9f8c83446a0e",
+    "rank": 63,
+    "source_name": "Muddy Waters Research",
+    "source_type": "business",
+    "url": "https://www.muddywatersresearch.com/feed"
+  },
+  {
+    "active": true,
+    "created_at": "2024-01-30T13:04:00.001Z",
+    "id": "8ba44c30-2edc-4007-8ffc-bea894dfe0e4",
+    "rank": 64,
+    "source_name": "Venture Capital Journal",
+    "source_type": "business",
+    "url": "https://www.venturecapitaljournal.com/rss"
   }
 ]

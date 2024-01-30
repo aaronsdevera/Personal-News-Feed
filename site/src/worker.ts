@@ -722,7 +722,7 @@ export default {
         const url = new URL(request.url);
         const path = url.pathname;
 
-        const default_hours = 24;
+        const default_hours = 48;
 
 
         let auth_headers = {};
@@ -733,7 +733,7 @@ export default {
 
         if (url.searchParams.get('source_name') !== null) {
             const source_name = url.searchParams.get('source_name');
-            const headlines = await get_headlines(env, auth_headers, source_name, '', 250, default_hours);
+            const headlines = await get_headlines(env, auth_headers, source_name, '', 300, default_hours);
             return new Response(
                 return_html_index(JSON.stringify(headlines), JSON.stringify(sources), default_hours),
                 {

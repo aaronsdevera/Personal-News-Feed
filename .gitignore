@@ -7,3 +7,4 @@ pyvenvcfg
 .env.local
 pyvenv.cfg
 .dev.vars
+venv
