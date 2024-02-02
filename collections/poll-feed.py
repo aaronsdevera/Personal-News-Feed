@@ -82,6 +82,7 @@ def check_url(url_sha256: str, headline_sha256: str):
 def produce_feed(source_name: str, source_type: str, feed_url: str):
     poll_id = generate_uuid()
     feed = feedparser.parse(feed_url)
+
     if feed:
         if feed.status in [400,401,403,404,500]:
             user_agents = [
@@ -94,6 +95,7 @@ def produce_feed(source_name: str, source_type: str, feed_url: str):
                     break
                 
         for entry in feed.entries:
+
             headline = None
             try:
                 headline = entry.title
@@ -110,6 +112,7 @@ def produce_feed(source_name: str, source_type: str, feed_url: str):
                 created_at = dateutil.parser.parse(created_at).isoformat()
             except:
                 pass
+
             yield {
                 'created_at': created_at,
                 'poll_id': poll_id,
@@ -150,6 +153,10 @@ if __name__ == '__main__':
             source_name = source['source_name']
             source_type = source['source_type']
             feed_url = source['url']
+
+            LIMIT = False if source_name not in ['Intelligence Online'] else True
+            FEED_LIMIT = 50
+            count = 0
             try:
                 for record in produce_feed(source_name, source_type, feed_url):
                     print(f'[+] checking record: {record["headline"]}\t{record["url_sha256"]}')
@@ -160,6 +167,11 @@ if __name__ == '__main__':
                         )
                     else:
                         print('[!] record already exists')
+                    count += 1
+                    if LIMIT and count >= FEED_LIMIT:
+                        print(f'[+] reached {FEED_LIMIT} post feed limit for {source_name} [{source_type}]')
+                        break
+
             except:
                 print('[!] error processing feed')
                 pass
