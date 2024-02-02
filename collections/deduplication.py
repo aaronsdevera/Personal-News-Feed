@@ -37,14 +37,18 @@ def run_search(query: str):
 
 def get_records_by_url_sha256(url_sha256: str):
     #results = run_sql(f'select * from "newsfeed-headlines" where url_sha256 = \'{url_sha256}\'').json()
-    results = run_search(f'url_sha256:"{url_sha256}"').json()
+    try:
+        results = run_search(f'url_sha256:"{url_sha256}"').json()
+    except Exception as e:
+        print(f'[!] Error: {e}')
+        return None
     if 'hits' in list(results.keys()):
         if 'hits' in list(results['hits'].keys()):
             return pd.json_normalize(results['hits']['hits']).to_dict('records')
         else:
-            print(f'[!] No hits found: {results.text}')
+            print(f'[!] No hits found: {results}')
     else:
-        print(f'[!] No hits found: {results.text}')
+        print(f'[!] No hits found: {results}')
     return None
 
 def delete_record_by_id(id: str):
