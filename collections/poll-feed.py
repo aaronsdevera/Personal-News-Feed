@@ -77,49 +77,53 @@ def check_url(url_sha256: str, headline_sha256: str):
     except Exception as e:
         print(f'[!] error making request to data sink url: {e}')
         pass
+    return False
     
 def produce_feed(source_name: str, source_type: str, feed_url: str):
     poll_id = generate_uuid()
     feed = feedparser.parse(feed_url)
-    if feed.status in [400,401,403,404,500]:
-        user_agents = [
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.3',
-            'WhatsApp/2.28.1'
-        ]
-        for ua in user_agents:
-            feed = feedparser.parse(feed_url, agent=ua)
-            if feed.status not in [400,401,403,404,500]:
-                break
-            
-    for entry in feed.entries:
-        headline = None
-        try:
-            headline = entry.title
-        except:
-            pass
-        url = None
-        try:
-            url = entry.link
-        except:
-            pass
-        created_at = None
-        try:
-            created_at = entry.published
-            created_at = dateutil.parser.parse(created_at).isoformat()
-        except:
-            pass
-        yield {
-            'created_at': created_at,
-            'poll_id': poll_id,
-            'source_name': source_name,
-            'source_name_sha256': sha256_hash(source_name),
-            'source_type': source_type,
-            'source_type_sha256': sha256_hash(source_type),
-            'headline': headline,
-            'headline_sha256': sha256_hash(headline),
-            'url': url,
-            'url_sha256': sha256_hash(url)
-        }
+    if feed:
+        if feed.status in [400,401,403,404,500]:
+            user_agents = [
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.3',
+                'WhatsApp/2.28.1'
+            ]
+            for ua in user_agents:
+                feed = feedparser.parse(feed_url, agent=ua)
+                if feed.status not in [400,401,403,404,500]:
+                    break
+                
+        for entry in feed.entries:
+            headline = None
+            try:
+                headline = entry.title
+            except:
+                pass
+            url = None
+            try:
+                url = entry.link
+            except:
+                pass
+            created_at = None
+            try:
+                created_at = entry.published
+                created_at = dateutil.parser.parse(created_at).isoformat()
+            except:
+                pass
+            yield {
+                'created_at': created_at,
+                'poll_id': poll_id,
+                'source_name': source_name,
+                'source_name_sha256': sha256_hash(source_name),
+                'source_type': source_type,
+                'source_type_sha256': sha256_hash(source_type),
+                'headline': headline,
+                'headline_sha256': sha256_hash(headline),
+                'url': url,
+                'url_sha256': sha256_hash(url)
+            }
+    else:
+        return
 
 
 if __name__ == '__main__':
@@ -146,13 +150,16 @@ if __name__ == '__main__':
             source_name = source['source_name']
             source_type = source['source_type']
             feed_url = source['url']
-
-            for record in produce_feed(source_name, source_type, feed_url):
-                print(f'[+] checking record: {record["headline"]}\t{record["url_sha256"]}')
-                if not check_url(record['url_sha256'], record['headline_sha256']):
-                    print(json.dumps(record))
-                    r = sink_data(
-                        record
-                    )
-                else:
-                    print('[!] record already exists')
+            try:
+                for record in produce_feed(source_name, source_type, feed_url):
+                    print(f'[+] checking record: {record["headline"]}\t{record["url_sha256"]}')
+                    if not check_url(record['url_sha256'], record['headline_sha256']):
+                        print(json.dumps(record))
+                        r = sink_data(
+                            record
+                        )
+                    else:
+                        print('[!] record already exists')
+            except:
+                print('[!] error processing feed')
+                pass
