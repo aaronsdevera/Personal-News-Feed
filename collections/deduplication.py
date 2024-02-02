@@ -38,7 +38,14 @@ def run_search(query: str):
 def get_records_by_url_sha256(url_sha256: str):
     #results = run_sql(f'select * from "newsfeed-headlines" where url_sha256 = \'{url_sha256}\'').json()
     results = run_search(f'url_sha256:"{url_sha256}"').json()
-    return pd.json_normalize(results['hits']['hits']).to_dict('records')
+    if 'hits' in list(results.keys()):
+        if 'hits' in list(results['hits'].keys()):
+            return pd.json_normalize(results['hits']['hits']).to_dict('records')
+        else:
+            print(f'[!] No hits found: {results.text}')
+    else:
+        print(f'[!] No hits found: {results.text}')
+    return None
 
 def delete_record_by_id(id: str):
     HEADERS = {
@@ -57,9 +64,10 @@ def get_duplicates():
 
 for duplicate_hash in get_duplicates():
     records = get_records_by_url_sha256(duplicate_hash['url_sha256'])
-    for record in records[:-1]:
-        print(f'[!] Deleting record {record["_id"]}')
-        r = delete_record_by_id(record['_id'])
-        print(f'[+] Status code: {r.status_code}')
+    if records:
+        for record in records[:-1]:
+            print(f'[!] Deleting record {record["_id"]}')
+            r = delete_record_by_id(record['_id'])
+            print(f'[+] Status code: {r.status_code}')
 
 print(get_duplicates())
