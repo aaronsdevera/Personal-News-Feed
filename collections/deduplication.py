@@ -27,7 +27,11 @@ def run_search(query: str):
         'CF-Access-Client-Secret': f'{DOOMPILE_API_KEY}'
     }
     BODY = {
-        'query': f'{query}'
+        'query': {
+            'query_string': {
+                'query': f'{query}'
+            }
+        }
     }
     r = requests.post(f'{DOOMPILE_API_URL}/search/newsfeed-headlines',
         headers=HEADERS,
