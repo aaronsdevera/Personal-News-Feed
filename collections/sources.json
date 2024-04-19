@@ -601,5 +601,14 @@
         "source_name": "Do Not Research",
         "source_type": "tech",
         "url": "https://donotresearch.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:53:47.892372",
+        "id": "f317b01f-320c-448c-993f-4824055cd53c",
+        "rank": 68,
+        "source_name": "Lobsters",
+        "source_type": "tech",
+        "url": "https://lobste.rs/rss"
     }
 ]
