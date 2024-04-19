@@ -592,5 +592,14 @@
         "source_name": "Reboot",
         "source_type": "tech",
         "url": "https://joinreboot.org/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:55:37.702523",
+        "id": "d738a2ae-fbd6-472b-80dc-78e6ff7d4d0e",
+        "rank": 67,
+        "source_name": "Do Not Research",
+        "source_type": "tech",
+        "url": "https://donotresearch.substack.com/feed"
     }
 ]
