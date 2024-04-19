@@ -592,5 +592,14 @@
         "source_name": "Reboot",
         "source_type": "tech",
         "url": "https://joinreboot.org/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:53:47.892372",
+        "id": "f317b01f-320c-448c-993f-4824055cd53c",
+        "rank": 67,
+        "source_name": "Lobsters",
+        "source_type": "tech",
+        "url": "https://lobste.rs/rss"
     }
 ]
