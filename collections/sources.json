@@ -583,5 +583,14 @@
         "source_name": "Rhizome",
         "source_type": "tech",
         "url": "https://feeds.feedburner.com/TheRhizomeBlogRss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:52:25.883244",
+        "id": "2c9b9da1-a741-42c4-a1d8-5c80bce8eec9",
+        "rank": 66,
+        "source_name": "Reboot",
+        "source_type": "tech",
+        "url": "https://joinreboot.org/feed"
     }
 ]
