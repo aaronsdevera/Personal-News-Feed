@@ -1,578 +1,605 @@
 [
-  {
-    "active": true,
-    "created_at": "2023-03-21T21:06:10.430Z",
-    "id": "0e263eb1-3c72-406e-9ffb-04de9b45831c",
-    "rank": 1,
-    "source_name": "Hacker News",
-    "source_type": "news",
-    "url": "https://news.ycombinator.com/rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
-    "rank": 2,
-    "source_name": "Bloomberg",
-    "source_type": "business",
-    "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "b54fc7df-6442-4280-ab76-d184043194b0",
-    "rank": 3,
-    "source_name": "Ars Technica",
-    "source_type": "tech",
-    "url": "https://feeds.feedburner.com/arstechnica/index"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "25326a5a-4e78-4443-b5e0-4f12ae74c5b3",
-    "rank": 4,
-    "source_name": "The Verge",
-    "source_type": "tech",
-    "url": "https://www.theverge.com/rss/index.xml"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "c27fd3f2-4f7d-4004-8516-c35bd1b59a8d",
-    "rank": 5,
-    "source_name": "The Intercept",
-    "source_type": "politics",
-    "url": "https://theintercept.com/feed/?lang=en"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "5578ecdc-c4c1-41e8-a26f-60df6b82e13a",
-    "rank": 6,
-    "source_name": "Neural",
-    "source_type": "tech",
-    "url": "https://neural.it/customfeed/all.php"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "0430077f-c21a-4075-b83b-7f415246064f",
-    "rank": 7,
-    "source_name": "MIT Technology Review",
-    "source_type": "science",
-    "url": "https://www.technologyreview.com/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "009f7185-85a6-42aa-839e-5f441836dfdd",
-    "rank": 8,
-    "source_name": "Hackaday",
-    "source_type": "tech",
-    "url": "https://hackaday.com/blog/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "8fec7ac3-f520-4b8e-8ffa-e0f388ebbcc9",
-    "rank": 9,
-    "source_name": "New York Times",
-    "source_type": "news",
-    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "4f276646-b7ef-4fae-abe2-57312ab0c3d6",
-    "rank": 10,
-    "source_name": "Wall Street Journal",
-    "source_type": "news",
-    "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "7fe1dc35-c485-485b-bdfe-acf9fa43cb51",
-    "rank": 11,
-    "source_name": "Roll Call",
-    "source_type": "politics",
-    "url": "https://nitter.net/rollcall/rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "49c5eb4b-13c7-4dda-9201-f06ecca59d6b",
-    "rank": 12,
-    "source_name": "Nature",
-    "source_type": "science",
-    "url": "https://www.nature.com/nature.rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "0baad7a4-ef07-4795-8eaa-ea92770d8fdc",
-    "rank": 13,
-    "source_name": "The Guardian",
-    "source_type": "news",
-    "url": "https://www.theguardian.com/world/rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "3b96d1e6-c17e-4da8-8264-b74cb5173999",
-    "rank": 14,
-    "source_name": "Wired",
-    "source_type": "tech",
-    "url": "https://www.wired.com/feed/category/business/latest/rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "a7617a4f-174c-4895-8e99-f5a800d7c67c",
-    "rank": 15,
-    "source_name": "Harvard Business Review",
-    "source_type": "business",
-    "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "d2d1cb3d-5ad3-4482-9136-261ead64f1ad",
-    "rank": 16,
-    "source_name": "StackOverflow",
-    "source_type": "tech",
-    "url": "https://stackoverflow.blog/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "7fa54845-8580-4154-b3f9-ba53ec79253f",
-    "rank": 17,
-    "source_name": "The New Yorker",
-    "source_type": "news",
-    "url": "https://www.newyorker.com/feed/everything"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "a724efb4-b6a9-44d2-a912-fab9acce570a",
-    "rank": 18,
-    "source_name": "DoJ",
-    "source_type": "news",
-    "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T00:51:16.853Z",
-    "id": "9cf70dc7-8759-46c6-8584-82f759a069ed",
-    "rank": 19,
-    "source_name": "The Information",
-    "source_type": "tech",
-    "url": "https://www.theinformation.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:08:59.349Z",
-    "id": "abcb1893-1460-4e24-aa5e-75e068ae786e",
-    "rank": 20,
-    "source_name": "Eugene Yan",
-    "source_type": "blog",
-    "url": "https://eugeneyan.com/rss/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:11:47.053Z",
-    "id": "56c01fa9-b49e-43c9-8c69-e419cb9e24c8",
-    "rank": 21,
-    "source_name": "The Grugq",
-    "source_type": "blog",
-    "url": "https://grugq.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:25:34.439Z",
-    "id": "f1aaeb11-61cb-42b6-8bb5-d3987a948011",
-    "rank": 22,
-    "source_name": "Risky Business",
-    "source_type": "blog",
-    "url": "https://riskybiznews.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:26:26.759Z",
-    "id": "cee8c7a8-f33e-454c-9b9c-a63608cdebfd",
-    "rank": 23,
-    "source_name": "lcamtuf",
-    "source_type": "blog",
-    "url": "https://lcamtuf.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:27:08.484Z",
-    "id": "007f681f-d413-4684-b69f-e0d902eb51c7",
-    "rank": 24,
-    "source_name": "Matt Tait",
-    "source_type": "blog",
-    "url": "https://www.pwnallthethings.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:27:57.127Z",
-    "id": "f9d844e0-b74a-42c6-b017-219eeb2eb408",
-    "rank": 25,
-    "source_name": "Steve Vladeck",
-    "source_type": "blog",
-    "url": "https://stevevladeck.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:28:13.910Z",
-    "id": "af013af4-2352-425a-baa8-3c60eef71b9e",
-    "rank": 26,
-    "source_name": "Ben Wittes",
-    "source_type": "blog",
-    "url": "https://www.dogshirtdaily.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:31:29.345Z",
-    "id": "e0d23bb1-905a-4ef1-bbbf-780448c39061",
-    "rank": 27,
-    "source_name": "Shannon Liao",
-    "source_type": "blog",
-    "url": "https://shannonliao.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:31:56.262Z",
-    "id": "26c8f197-b40d-4d82-9cb5-4fdf13d8d429",
-    "rank": 28,
-    "source_name": "Shoshana Wodinsky",
-    "source_type": "blog",
-    "url": "https://swodinsky.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-13T01:32:30.060Z",
-    "id": "9929ae3c-38c0-445a-8aa5-c2ca09ab7c3f",
-    "rank": 29,
-    "source_name": "Conspirador Norteno",
-    "source_type": "blog",
-    "url": "https://conspirator0.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-03-24T14:58:16.295Z",
-    "id": "f354a72f-b445-4981-b87f-da529a2e3f2a",
-    "rank": 30,
-    "source_name": "Joshua Citarella",
-    "source_type": "blog",
-    "url": "https://joshuacitarella.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-04-04T03:39:51.782Z",
-    "id": "a4635692-d8d8-4cb6-9a68-297ba9386ac2",
-    "rank": 31,
-    "source_name": "Molly White",
-    "source_type": "blog",
-    "url": "https://newsletter.mollywhite.net/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-04-13T12:27:45.857Z",
-    "id": "c57b8b6e-9a0d-44ad-8eb0-fad9919c40bf",
-    "rank": 32,
-    "source_name": "Convex Value",
-    "source_type": "blog",
-    "url": "https://convex.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:30:35.363Z",
-    "id": "1f245c32-3fca-47be-850b-2998ebb88601",
-    "rank": 33,
-    "source_name": "Cyber Defence Analysis",
-    "source_type": "blog",
-    "url": "https://bluepurple.binaryfirefly.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:32:45.849Z",
-    "id": "6d9693af-32c7-4d9d-b893-90187f148003",
-    "rank": 34,
-    "source_name": "Intrusion Truth",
-    "source_type": "blog",
-    "url": "https://intrusiontruth.wordpress.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:34:13.518Z",
-    "id": "eb766f30-5fc6-4faa-971e-dbe60d0e5d3b",
-    "rank": 35,
-    "source_name": "KrebsOnSecurity",
-    "source_type": "blog",
-    "url": "https://krebsonsecurity.com/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:34:53.126Z",
-    "id": "491774a0-82b0-4f93-8b7d-1f8507e79614",
-    "rank": 36,
-    "source_name": "Cory Doctorow",
-    "source_type": "blog",
-    "url": "https://craphound.com/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:35:35.750Z",
-    "id": "61c47bb4-f32f-4d91-959d-01c7834397d4",
-    "rank": 37,
-    "source_name": "Slicletter",
-    "source_type": "blog",
-    "url": "https://slic.substack.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:15.727Z",
-    "id": "0f7d0865-1949-4ad2-a2e6-3a3c8d55ce95",
-    "rank": 38,
-    "source_name": "Arxiv Human Computer Interaction",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.HC"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:16.642Z",
-    "id": "19f84d71-5f06-4b2b-ba96-08f8e0e4c133",
-    "rank": 39,
-    "source_name": "Arxiv Computers and Society",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.CY"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:17.332Z",
-    "id": "1c6aabb3-f5dd-45a2-8c96-b14fdbd82eb7",
-    "rank": 40,
-    "source_name": "Arxiv Cryptography and Security",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.CR"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:18.086Z",
-    "id": "7110e58e-624a-403f-ac90-b4bfde1b1af9",
-    "rank": 41,
-    "source_name": "Arxiv Artificial Intelligence",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.AI"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:18.881Z",
-    "id": "0d1c703b-1f7a-4315-b151-19e08f311bf0",
-    "rank": 42,
-    "source_name": "Arxiv Computers Game Theory",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.GT"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:19.592Z",
-    "id": "529a21ab-f2c8-4966-9ac1-b9450e19ba7a",
-    "rank": 43,
-    "source_name": "Arxiv Social Networks",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.SI"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:20.313Z",
-    "id": "af82282c-9d96-45e1-b6d7-c08a9c8b2643",
-    "rank": 44,
-    "source_name": "Arxiv Information Retrieval",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.IR"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:52:21.080Z",
-    "id": "f256ee10-5bd6-487e-bdf6-981fc134cb37",
-    "rank": 45,
-    "source_name": "Arxiv Information Theory",
-    "source_type": "research",
-    "url": "http://arxiv.org/rss/cs.IT"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T07:53:45.972Z",
-    "id": "e2fca62c-9271-463d-9b51-7e4e8fe5d302",
-    "rank": 46,
-    "source_name": "Hellgate",
-    "source_type": "news",
-    "url": "https://hellgatenyc.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:02:40.358Z",
-    "id": "28fdac9a-6b92-4b47-b003-0f815edbaebe",
-    "rank": 47,
-    "source_name": "Simon Willison",
-    "source_type": "blog",
-    "url": "https://simonwillison.net/atom/everything/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:16:29.900Z",
-    "id": "7cc8027b-f082-4432-918a-ae083b8f659e",
-    "rank": 48,
-    "source_name": "Berkman Klein Center",
-    "source_type": "blog",
-    "url": "https://medium.com/feed/berkman-klein-center"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:37:37.938Z",
-    "id": "81c20c1f-4560-4da3-b18a-1ff9e475c14d",
-    "rank": 49,
-    "source_name": "Intelligence Online",
-    "source_type": "news",
-    "url": "http://feeds.feedburner.com/IntelligenceOnline"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:41:51.738Z",
-    "id": "5d396bcf-7029-4248-98ed-49767bbef143",
-    "rank": 50,
-    "source_name": "StratFor",
-    "source_type": "news",
-    "url": "http://www.stratfor.com/rss.xml"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:42:47.127Z",
-    "id": "80c0dd52-4eea-4bf4-b38d-f5fef44048e6",
-    "rank": 51,
-    "source_name": "The Diplomat",
-    "source_type": "news",
-    "url": "https://thediplomat.com/category/blogs/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:44:53.137Z",
-    "id": "be6739e2-8808-4ad4-a598-e5c05c73d992",
-    "rank": 52,
-    "source_name": "Reuters",
-    "source_type": "news",
-    "url": "https://www.reutersagency.com/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-20T08:47:59.953Z",
-    "id": "03c13bb9-1bb5-4e68-bf25-b354bf32c687",
-    "rank": 53,
-    "source_name": "Financial Times",
-    "source_type": "news",
-    "url": "https://www.ft.com/rss/home/uk"
-  },
-  {
-    "active": false,
-    "created_at": "2023-08-20T08:52:03.101Z",
-    "id": "01988ef9-c5ff-4984-a34f-2ec8fe48b2f1",
-    "rank": 54,
-    "source_name": "Global Newswire Analysis",
-    "source_type": "business",
-    "url": "https://www.globenewswire.com/RssFeed/subjectcode/3-Analyst%20Recommendations/feedTitle/GlobeNewswire%20-%20Analyst%20Recommendations"
-  },
-  {
-    "active": false,
-    "created_at": "2023-08-20T08:56:31.434Z",
-    "id": "7e68a7bc-55d5-4343-a55d-4808119c9494",
-    "rank": 55,
-    "source_name": "Global Newswire Contracts",
-    "source_type": "business",
-    "url": "https://www.globenewswire.com/RssFeed/subjectcode/7-Business%20Contracts/feedTitle/GlobeNewswire%20-%20Business%20Contracts"
-  },
-  {
-    "active": false,
-    "created_at": "2023-08-20T08:56:32.028Z",
-    "id": "4ba902c2-c5ac-4285-8c2c-d300e0f56697",
-    "rank": 56,
-    "source_name": "Global Newswire Research",
-    "source_type": "business",
-    "url": "https://www.globenewswire.com/RssFeed/subjectcode/14-Economic%20Research%20And%20Reports/feedTitle/GlobeNewswire%20-%20Economic%20Research%20And%20Reports"
-  },
-  {
-    "active": true,
-    "created_at": "2023-08-22T21:23:40.319Z",
-    "id": "1f821b2c-5c31-4ca4-9ca6-8dfeffafa29e",
-    "rank": 57,
-    "source_name": "404media",
-    "source_type": "news",
-    "url": "https://www.404media.co/rss/"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-08T16:15:40.319Z",
-    "id": "1d345acd9-0c22-4d07-9ae4-c0de4e9161ee",
-    "rank": 58,
-    "source_name": "GM NYC",
-    "source_type": "events",
-    "url": "https://www.gmnyc.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-19T03:02:00.001Z",
-    "id": "1f487e0c8-c78f-4b3c-a4c8-5a976a3f7bdb",
-    "rank": 59,
-    "source_name": "CTL ALT DEL Blog",
-    "source_type": "blog",
-    "url": "https://controlaltdelete.technology/rss/feed.rss"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-27T11:37:00.001Z",
-    "id": "0e921678-b8cc-40be-b82f-072a866406d6",
-    "rank": 60,
-    "source_name": "Hardcore Software",
-    "source_type": "blog",
-    "url": "https://hardcoresoftware.learningbyshipping.com/feed.rss"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-30T11:42:00.001Z",
-    "id": "99c0664b-9a26-4457-81bc-e5029571fc84",
-    "rank": 61,
-    "source_name": "The Record",
-    "source_type": "tech",
-    "url": "https://therecord.media/feed/"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-30T12:42:00.001Z",
-    "id": "fd537f13-02e2-4ceb-b30b-0d8f5f73426d",
-    "rank": 62,
-    "source_name": "Foreign Affairs",
-    "source_type": "news",
-    "url": "https://www.foreignaffairs.com/rss.xml"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-30T12:43:00.001Z",
-    "id": "5612af23-92ee-4698-bbe3-9f8c83446a0e",
-    "rank": 63,
-    "source_name": "Muddy Waters Research",
-    "source_type": "business",
-    "url": "https://www.muddywatersresearch.com/feed"
-  },
-  {
-    "active": true,
-    "created_at": "2024-01-30T13:04:00.001Z",
-    "id": "8ba44c30-2edc-4007-8ffc-bea894dfe0e4",
-    "rank": 64,
-    "source_name": "Venture Capital Journal",
-    "source_type": "business",
-    "url": "https://www.venturecapitaljournal.com/rss"
-  }
+    {
+        "active": true,
+        "created_at": "2023-03-21T21:06:10.430Z",
+        "id": "0e263eb1-3c72-406e-9ffb-04de9b45831c",
+        "rank": 1,
+        "source_name": "Hacker News",
+        "source_type": "news",
+        "url": "https://news.ycombinator.com/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "3b64ebde-7a5b-49d0-86cc-a3bc26a749cf",
+        "rank": 2,
+        "source_name": "Bloomberg",
+        "source_type": "business",
+        "url": "https://news.google.com/rss/search?q=when:7d+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "b54fc7df-6442-4280-ab76-d184043194b0",
+        "rank": 3,
+        "source_name": "Ars Technica",
+        "source_type": "tech",
+        "url": "https://feeds.feedburner.com/arstechnica/index"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "25326a5a-4e78-4443-b5e0-4f12ae74c5b3",
+        "rank": 4,
+        "source_name": "The Verge",
+        "source_type": "tech",
+        "url": "https://www.theverge.com/rss/index.xml"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "c27fd3f2-4f7d-4004-8516-c35bd1b59a8d",
+        "rank": 5,
+        "source_name": "The Intercept",
+        "source_type": "politics",
+        "url": "https://theintercept.com/feed/?lang=en"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "5578ecdc-c4c1-41e8-a26f-60df6b82e13a",
+        "rank": 6,
+        "source_name": "Neural",
+        "source_type": "tech",
+        "url": "https://neural.it/customfeed/all.php"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "0430077f-c21a-4075-b83b-7f415246064f",
+        "rank": 7,
+        "source_name": "MIT Technology Review",
+        "source_type": "science",
+        "url": "https://www.technologyreview.com/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "009f7185-85a6-42aa-839e-5f441836dfdd",
+        "rank": 8,
+        "source_name": "Hackaday",
+        "source_type": "tech",
+        "url": "https://hackaday.com/blog/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "8fec7ac3-f520-4b8e-8ffa-e0f388ebbcc9",
+        "rank": 9,
+        "source_name": "New York Times",
+        "source_type": "news",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "4f276646-b7ef-4fae-abe2-57312ab0c3d6",
+        "rank": 10,
+        "source_name": "Wall Street Journal",
+        "source_type": "news",
+        "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "7fe1dc35-c485-485b-bdfe-acf9fa43cb51",
+        "rank": 11,
+        "source_name": "Roll Call",
+        "source_type": "politics",
+        "url": "https://nitter.net/rollcall/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "49c5eb4b-13c7-4dda-9201-f06ecca59d6b",
+        "rank": 12,
+        "source_name": "Nature",
+        "source_type": "science",
+        "url": "https://www.nature.com/nature.rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "0baad7a4-ef07-4795-8eaa-ea92770d8fdc",
+        "rank": 13,
+        "source_name": "The Guardian",
+        "source_type": "news",
+        "url": "https://www.theguardian.com/world/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "3b96d1e6-c17e-4da8-8264-b74cb5173999",
+        "rank": 14,
+        "source_name": "Wired",
+        "source_type": "tech",
+        "url": "https://www.wired.com/feed/category/business/latest/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "a7617a4f-174c-4895-8e99-f5a800d7c67c",
+        "rank": 15,
+        "source_name": "Harvard Business Review",
+        "source_type": "business",
+        "url": "https://tagteam.harvard.edu/hub_feeds/924/feed_items.rss"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "d2d1cb3d-5ad3-4482-9136-261ead64f1ad",
+        "rank": 16,
+        "source_name": "StackOverflow",
+        "source_type": "tech",
+        "url": "https://stackoverflow.blog/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "7fa54845-8580-4154-b3f9-ba53ec79253f",
+        "rank": 17,
+        "source_name": "The New Yorker",
+        "source_type": "news",
+        "url": "https://www.newyorker.com/feed/everything"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "a724efb4-b6a9-44d2-a912-fab9acce570a",
+        "rank": 18,
+        "source_name": "DoJ",
+        "source_type": "news",
+        "url": "https://www.justice.gov/feeds/justice-news.xml?type%5Bpress_release%5D=press_release&component%5B376%5D=376&organization=All"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T00:51:16.853Z",
+        "id": "9cf70dc7-8759-46c6-8584-82f759a069ed",
+        "rank": 19,
+        "source_name": "The Information",
+        "source_type": "tech",
+        "url": "https://www.theinformation.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:08:59.349Z",
+        "id": "abcb1893-1460-4e24-aa5e-75e068ae786e",
+        "rank": 20,
+        "source_name": "Eugene Yan",
+        "source_type": "blog",
+        "url": "https://eugeneyan.com/rss/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:11:47.053Z",
+        "id": "56c01fa9-b49e-43c9-8c69-e419cb9e24c8",
+        "rank": 21,
+        "source_name": "The Grugq",
+        "source_type": "blog",
+        "url": "https://grugq.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:25:34.439Z",
+        "id": "f1aaeb11-61cb-42b6-8bb5-d3987a948011",
+        "rank": 22,
+        "source_name": "Risky Business",
+        "source_type": "blog",
+        "url": "https://riskybiznews.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:26:26.759Z",
+        "id": "cee8c7a8-f33e-454c-9b9c-a63608cdebfd",
+        "rank": 23,
+        "source_name": "lcamtuf",
+        "source_type": "blog",
+        "url": "https://lcamtuf.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:27:08.484Z",
+        "id": "007f681f-d413-4684-b69f-e0d902eb51c7",
+        "rank": 24,
+        "source_name": "Matt Tait",
+        "source_type": "blog",
+        "url": "https://www.pwnallthethings.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:27:57.127Z",
+        "id": "f9d844e0-b74a-42c6-b017-219eeb2eb408",
+        "rank": 25,
+        "source_name": "Steve Vladeck",
+        "source_type": "blog",
+        "url": "https://stevevladeck.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:28:13.910Z",
+        "id": "af013af4-2352-425a-baa8-3c60eef71b9e",
+        "rank": 26,
+        "source_name": "Ben Wittes",
+        "source_type": "blog",
+        "url": "https://www.dogshirtdaily.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:31:29.345Z",
+        "id": "e0d23bb1-905a-4ef1-bbbf-780448c39061",
+        "rank": 27,
+        "source_name": "Shannon Liao",
+        "source_type": "blog",
+        "url": "https://shannonliao.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:31:56.262Z",
+        "id": "26c8f197-b40d-4d82-9cb5-4fdf13d8d429",
+        "rank": 28,
+        "source_name": "Shoshana Wodinsky",
+        "source_type": "blog",
+        "url": "https://swodinsky.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-13T01:32:30.060Z",
+        "id": "9929ae3c-38c0-445a-8aa5-c2ca09ab7c3f",
+        "rank": 29,
+        "source_name": "Conspirador Norteno",
+        "source_type": "blog",
+        "url": "https://conspirator0.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-03-24T14:58:16.295Z",
+        "id": "f354a72f-b445-4981-b87f-da529a2e3f2a",
+        "rank": 30,
+        "source_name": "Joshua Citarella",
+        "source_type": "blog",
+        "url": "https://joshuacitarella.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-04-04T03:39:51.782Z",
+        "id": "a4635692-d8d8-4cb6-9a68-297ba9386ac2",
+        "rank": 31,
+        "source_name": "Molly White",
+        "source_type": "blog",
+        "url": "https://newsletter.mollywhite.net/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-04-13T12:27:45.857Z",
+        "id": "c57b8b6e-9a0d-44ad-8eb0-fad9919c40bf",
+        "rank": 32,
+        "source_name": "Convex Value",
+        "source_type": "blog",
+        "url": "https://convex.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:30:35.363Z",
+        "id": "1f245c32-3fca-47be-850b-2998ebb88601",
+        "rank": 33,
+        "source_name": "Cyber Defence Analysis",
+        "source_type": "blog",
+        "url": "https://bluepurple.binaryfirefly.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:32:45.849Z",
+        "id": "6d9693af-32c7-4d9d-b893-90187f148003",
+        "rank": 34,
+        "source_name": "Intrusion Truth",
+        "source_type": "blog",
+        "url": "https://intrusiontruth.wordpress.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:34:13.518Z",
+        "id": "eb766f30-5fc6-4faa-971e-dbe60d0e5d3b",
+        "rank": 35,
+        "source_name": "KrebsOnSecurity",
+        "source_type": "blog",
+        "url": "https://krebsonsecurity.com/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:34:53.126Z",
+        "id": "491774a0-82b0-4f93-8b7d-1f8507e79614",
+        "rank": 36,
+        "source_name": "Cory Doctorow",
+        "source_type": "blog",
+        "url": "https://craphound.com/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:35:35.750Z",
+        "id": "61c47bb4-f32f-4d91-959d-01c7834397d4",
+        "rank": 37,
+        "source_name": "Slicletter",
+        "source_type": "blog",
+        "url": "https://slic.substack.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:15.727Z",
+        "id": "0f7d0865-1949-4ad2-a2e6-3a3c8d55ce95",
+        "rank": 38,
+        "source_name": "Arxiv Human Computer Interaction",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.HC"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:16.642Z",
+        "id": "19f84d71-5f06-4b2b-ba96-08f8e0e4c133",
+        "rank": 39,
+        "source_name": "Arxiv Computers and Society",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.CY"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:17.332Z",
+        "id": "1c6aabb3-f5dd-45a2-8c96-b14fdbd82eb7",
+        "rank": 40,
+        "source_name": "Arxiv Cryptography and Security",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.CR"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:18.086Z",
+        "id": "7110e58e-624a-403f-ac90-b4bfde1b1af9",
+        "rank": 41,
+        "source_name": "Arxiv Artificial Intelligence",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.AI"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:18.881Z",
+        "id": "0d1c703b-1f7a-4315-b151-19e08f311bf0",
+        "rank": 42,
+        "source_name": "Arxiv Computers Game Theory",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.GT"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:19.592Z",
+        "id": "529a21ab-f2c8-4966-9ac1-b9450e19ba7a",
+        "rank": 43,
+        "source_name": "Arxiv Social Networks",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.SI"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:20.313Z",
+        "id": "af82282c-9d96-45e1-b6d7-c08a9c8b2643",
+        "rank": 44,
+        "source_name": "Arxiv Information Retrieval",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.IR"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:52:21.080Z",
+        "id": "f256ee10-5bd6-487e-bdf6-981fc134cb37",
+        "rank": 45,
+        "source_name": "Arxiv Information Theory",
+        "source_type": "research",
+        "url": "http://arxiv.org/rss/cs.IT"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T07:53:45.972Z",
+        "id": "e2fca62c-9271-463d-9b51-7e4e8fe5d302",
+        "rank": 46,
+        "source_name": "Hellgate",
+        "source_type": "news",
+        "url": "https://hellgatenyc.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:02:40.358Z",
+        "id": "28fdac9a-6b92-4b47-b003-0f815edbaebe",
+        "rank": 47,
+        "source_name": "Simon Willison",
+        "source_type": "blog",
+        "url": "https://simonwillison.net/atom/everything/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:16:29.900Z",
+        "id": "7cc8027b-f082-4432-918a-ae083b8f659e",
+        "rank": 48,
+        "source_name": "Berkman Klein Center",
+        "source_type": "blog",
+        "url": "https://medium.com/feed/berkman-klein-center"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:37:37.938Z",
+        "id": "81c20c1f-4560-4da3-b18a-1ff9e475c14d",
+        "rank": 49,
+        "source_name": "Intelligence Online",
+        "source_type": "news",
+        "url": "http://feeds.feedburner.com/IntelligenceOnline"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:41:51.738Z",
+        "id": "5d396bcf-7029-4248-98ed-49767bbef143",
+        "rank": 50,
+        "source_name": "StratFor",
+        "source_type": "news",
+        "url": "http://www.stratfor.com/rss.xml"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:42:47.127Z",
+        "id": "80c0dd52-4eea-4bf4-b38d-f5fef44048e6",
+        "rank": 51,
+        "source_name": "The Diplomat",
+        "source_type": "news",
+        "url": "https://thediplomat.com/category/blogs/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:44:53.137Z",
+        "id": "be6739e2-8808-4ad4-a598-e5c05c73d992",
+        "rank": 52,
+        "source_name": "Reuters",
+        "source_type": "news",
+        "url": "https://www.reutersagency.com/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-20T08:47:59.953Z",
+        "id": "03c13bb9-1bb5-4e68-bf25-b354bf32c687",
+        "rank": 53,
+        "source_name": "Financial Times",
+        "source_type": "news",
+        "url": "https://www.ft.com/rss/home/uk"
+    },
+    {
+        "active": false,
+        "created_at": "2023-08-20T08:52:03.101Z",
+        "id": "01988ef9-c5ff-4984-a34f-2ec8fe48b2f1",
+        "rank": 54,
+        "source_name": "Global Newswire Analysis",
+        "source_type": "business",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/3-Analyst%20Recommendations/feedTitle/GlobeNewswire%20-%20Analyst%20Recommendations"
+    },
+    {
+        "active": false,
+        "created_at": "2023-08-20T08:56:31.434Z",
+        "id": "7e68a7bc-55d5-4343-a55d-4808119c9494",
+        "rank": 55,
+        "source_name": "Global Newswire Contracts",
+        "source_type": "business",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/7-Business%20Contracts/feedTitle/GlobeNewswire%20-%20Business%20Contracts"
+    },
+    {
+        "active": false,
+        "created_at": "2023-08-20T08:56:32.028Z",
+        "id": "4ba902c2-c5ac-4285-8c2c-d300e0f56697",
+        "rank": 56,
+        "source_name": "Global Newswire Research",
+        "source_type": "business",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/14-Economic%20Research%20And%20Reports/feedTitle/GlobeNewswire%20-%20Economic%20Research%20And%20Reports"
+    },
+    {
+        "active": true,
+        "created_at": "2023-08-22T21:23:40.319Z",
+        "id": "1f821b2c-5c31-4ca4-9ca6-8dfeffafa29e",
+        "rank": 57,
+        "source_name": "404media",
+        "source_type": "news",
+        "url": "https://www.404media.co/rss/"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-08T16:15:40.319Z",
+        "id": "1d345acd9-0c22-4d07-9ae4-c0de4e9161ee",
+        "rank": 58,
+        "source_name": "GM NYC",
+        "source_type": "events",
+        "url": "https://www.gmnyc.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-19T03:02:00.001Z",
+        "id": "1f487e0c8-c78f-4b3c-a4c8-5a976a3f7bdb",
+        "rank": 59,
+        "source_name": "CTL ALT DEL Blog",
+        "source_type": "blog",
+        "url": "https://controlaltdelete.technology/rss/feed.rss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-27T11:37:00.001Z",
+        "id": "0e921678-b8cc-40be-b82f-072a866406d6",
+        "rank": 60,
+        "source_name": "Hardcore Software",
+        "source_type": "blog",
+        "url": "https://hardcoresoftware.learningbyshipping.com/feed.rss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-30T11:42:00.001Z",
+        "id": "99c0664b-9a26-4457-81bc-e5029571fc84",
+        "rank": 61,
+        "source_name": "The Record",
+        "source_type": "tech",
+        "url": "https://therecord.media/feed/"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-30T12:42:00.001Z",
+        "id": "fd537f13-02e2-4ceb-b30b-0d8f5f73426d",
+        "rank": 62,
+        "source_name": "Foreign Affairs",
+        "source_type": "news",
+        "url": "https://www.foreignaffairs.com/rss.xml"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-30T12:43:00.001Z",
+        "id": "5612af23-92ee-4698-bbe3-9f8c83446a0e",
+        "rank": 63,
+        "source_name": "Muddy Waters Research",
+        "source_type": "business",
+        "url": "https://www.muddywatersresearch.com/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-01-30T13:04:00.001Z",
+        "id": "8ba44c30-2edc-4007-8ffc-bea894dfe0e4",
+        "rank": 64,
+        "source_name": "Venture Capital Journal",
+        "source_type": "business",
+        "url": "https://www.venturecapitaljournal.com/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:50:36.999800",
+        "id": "eb10a905-d6e5-482e-8e26-c626ddbfa550",
+        "rank": 65,
+        "source_name": "Rhizome",
+        "source_type": "tech",
+        "url": "https://feeds.feedburner.com/TheRhizomeBlogRss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:52:25.883244",
+        "id": "2c9b9da1-a741-42c4-a1d8-5c80bce8eec9",
+        "rank": 66,
+        "source_name": "Reboot",
+        "source_type": "tech",
+        "url": "https://joinreboot.org/feed"
+    },
+    {
+        "active": true,
+        "created_at": "2024-04-19T16:53:47.892372",
+        "id": "f317b01f-320c-448c-993f-4824055cd53c",
+        "rank": 67,
+        "source_name": "Lobsters",
+        "source_type": "tech",
+        "url": "https://lobste.rs/rss"
+    }
 ]
