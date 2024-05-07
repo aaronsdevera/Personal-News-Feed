@@ -610,5 +610,14 @@
         "source_name": "Lobsters",
         "source_type": "tech",
         "url": "https://lobste.rs/rss"
+    },
+    {
+        "active": true,
+        "created_at": "2024-05-07T06:52:29.223350",
+        "id": "8a4cf1c7-a96e-4a9a-b9f6-08664531e60b",
+        "rank": 69,
+        "source_name": "The Stack",
+        "source_type": "tech",
+        "url": "https://www.thestack.technology/latest/rss/"
     }
 ]
