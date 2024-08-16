@@ -619,5 +619,14 @@
         "source_name": "The Stack",
         "source_type": "tech",
         "url": "https://www.thestack.technology/latest/rss/"
+    },
+    {
+        "active": true,
+        "created_at": "2024-08-16T00:41:12.991895",
+        "id": "64976dbd-0ff4-4a7a-bc1a-180b53e1c85b",
+        "rank": 70,
+        "source_name": "Exploits Club",
+        "source_type": "blog",
+        "url": "https://blog.exploits.club/rss"
     }
 ]
